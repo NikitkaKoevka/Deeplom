@@ -1,0 +1,181 @@
+* {margin: 0px; padding: 0px; box-sizing: border-box;}
+html
+{
+    height: 100%;
+}
+body
+{
+    background-color:#C3C4CC;
+    display: flex;
+    min-height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: Inter;
+    font-weight: 300;
+
+}
+
+.container
+{
+    display: flex;
+    flex-direction: row;
+}
+.Application
+{
+    display: flex;
+    flex-direction: column;
+    background-color:#D5E3EF;
+    min-width: 692px;
+    min-height: 528px;
+    border-radius:30px 0px 0px 30px;
+}
+.AppData
+{
+    display: flex;
+    justify-content:space-between;
+    min-height: 200px;
+    flex-direction: column;
+    margin-left: 120px;
+}
+div > label,input,textarea,button { }
+label ~ input,textarea
+{
+    color:rgb(0, 0, 0);
+    display: flex;
+    border:none;
+    min-width: 187px;
+    min-height:37px;
+    flex-direction: column;
+    border-radius: 7px;
+    font-size: 14px;
+    padding-left: 10px;
+    
+}
+.description
+{
+    min-width: 442px;
+    min-height: 113px;
+    padding: 5px 5px;
+    max-height: 193px;
+    max-width: 442px;
+}
+
+.sendmess
+{
+    min-width: 692px;
+    min-height: 75px;
+    border-radius:0px 0px 0px 30px;
+    background-color:#FFFFFF;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    flex-direction: row;
+}
+.typetext
+{
+    margin-left: 20px;
+    max-height: 50px;
+    min-width: 500px;
+    border-radius:10px;
+    border-color: #8b8b8b;
+    font-family: Inter;
+    padding: 15px;
+}
+.send
+{
+    width: 92px;
+    height: 31px;
+    background-color:#D9D9D9;
+    color:#525252;
+    border-radius:20px;
+    font-weight: 600;
+    font-size: 12px;
+}
+.bttnback
+{
+    margin:20px;
+}
+.sendback
+{
+    background-color:#FFFFFF;
+    min-width: 30px;
+    min-height: 30px;
+    height: 30px;
+    border-radius :100%;
+    font-weight: 600;
+}
+.profile
+{
+    background-color:white;
+    min-width: 307px;
+    min-height: 528px;
+    border-radius: 0px 30px 30px 0px;
+}
+.avatarka
+{
+    border-radius:100%;
+    width: 115px;
+    height: auto;
+}
+.profile
+{
+    padding: 10px;
+    display: flex;
+    justify-content:space-around;
+    flex-direction: column;
+    align-items:center;
+    font-size: 20px;
+    
+}
+.info
+{
+    background-color:#E1EEFA;
+    width: 229px;
+    height: 149px;
+    border-radius:20px;
+    padding: 10px;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #323366;
+}
+.FirstName
+{font-weight: 600;}
+.SecondName
+{font-weight: 600;}
+.E-mail
+{font-size: 12px; text-decoration: none;color: #323366;
+}
+
+.CreateApplication
+{
+    width: 163px;
+}
+div >button
+{
+    height: 41px;
+    background-color:#badaf7;
+    text-transform: uppercase;
+    border-radius:10px;
+    border:none;
+    color: #323366;
+    font-weight: 500;
+    font-size: 14px;
+}
+.LogOut
+{
+    width: 111px;
+}
+
+.Zayavlenie
+{
+    padding-right: 15px;
+    border-right: 1px solid #a8a8a8;
+}
+.Status
+{
+    padding-right: 15px;
+    border-right: 1px solid #a8a8a8;
+}

@@ -1,0 +1,261 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+html
+{
+    height: 100%;
+    width: 100%;
+}
+button
+{
+    width: 100px;
+    height: 40px;
+    border-radius:20px;
+    border:none;
+}
+body
+{
+    background-color:#dbdbdb;
+    display: flex;
+    min-height: 100%;
+    padding-bottom: 40px;
+    flex-direction: column;
+    align-items: center;
+    font-family: Inter;
+    font-weight: 300;
+
+}
+a{text-decoration: none;}
+li {list-style-type: none;}
+header
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100px;
+    padding: 10px;
+    min-width: 100%;
+    background-color:#ffffff;
+}
+img {width: 25px;}
+.ISTOK{width: 125px;}
+.Ava
+{width: 70px; height: 70px; border-radius:100%}
+.SotrudInfo
+{
+    display: flex;
+    flex-direction: row;
+    min-width: 300px;
+}
+.SI1
+{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 400;
+}
+.LogOut
+{
+    text-decoration: none;
+    color: #8194b8;
+}
+.SI2
+{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+.logo
+{
+padding: 20px;
+display: flex;
+    align-items: center;
+}
+.container
+{
+    display: flex;
+    flex-direction: row;
+   
+    padding-top: 20px;
+    padding-left:10px ;
+    padding-right: 10px;
+    min-width: 100%;
+
+}
+.linkbars
+{
+
+    padding-right: 20px;
+    min-height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.mainlinks
+{
+    min-height:60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    
+}
+.bottomlinks
+{
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.Sotrud
+{
+    min-width: 40%;
+    min-height: 800px;
+    background-color:#ffffff;
+    border-radius:30px 0px 0px 30px;
+    display: flex;
+    flex-direction: column;   
+    border-right: 1px solid #aaa;
+
+}
+.SotrudDialog
+{
+    min-width: 40%;
+    min-height: 800px;
+    background-color:#dcebfd;
+    border-radius:0px 30px 30px 0px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+}
+input[type="file"] 
+{
+    display: none;
+  }
+.typetext
+{
+   
+    max-height: 50px;
+    max-width: 350px;
+    border-radius:10px;
+    font-family: Inter;
+    padding: 15px;
+    border:1px solid #8b8b8b;
+}
+.UserList
+{
+    display: flex;
+    flex-direction: column-reverse;
+    
+   
+}
+.NUser
+{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom:1px solid #aaaaaa;
+    display: flex;
+    flex-direction: row;
+  justify-content: space-between;
+}
+.SearchInput
+{
+    height: 42px;
+    width: 345px;
+    border-radius:10px;
+    border:solid 1px #aaaaaa;
+    padding-left: 15px;
+}
+.SearchBttn
+{
+    margin-left: 5px;
+    height: 42px;
+    width: 40px;
+    border-radius:10px;
+    border:solid 1px #aaaaaa;
+
+}
+.Search
+{   margin: 0px;
+    padding: 15px;
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.SotrudHeader
+{
+    width: 100%;
+}
+.SotrudMessTitle
+{
+    padding: 30px;
+    height: 70px;
+    width: 100%;
+    border-bottom:1px solid #aaa;
+    background-color:#ffffff;
+    border-radius:0px 30px 0px 0px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    font-weight: 600;
+    color:rgb(65, 118, 139)
+}
+.SotrudTitle
+{
+    padding: 30px;
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #aaaaaa;
+    color: #000000;
+    font-weight: 300;
+    display: flex;
+    
+    align-items:center;
+}
+#AllSotrud{padding: 20px; color:#797979}
+.number
+{   
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    width: 100px;
+    font-size: 20px;
+    color: #000000;
+    font-weight: 300;
+}
+.SotrudWriteBar
+{
+    min-height: 75px;
+    border-radius:0px 0px 30px 0px;
+    background-color:#FFFFFF;
+    padding-right: 20px;
+    padding-left: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    flex-direction: row;
+}
+.mess
+{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    color: #000000;
+    font-weight: 300;
+    
+}
+.linkone
+{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+  
+}
+.HrefLink
+{ margin-left:10px ;}
+.paperclip
+{
+    width: 15px;
+}

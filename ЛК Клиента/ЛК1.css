@@ -1,0 +1,162 @@
+* {margin: 0px; padding: 0px; box-sizing: border-box;}
+html
+{
+    height: 100%;
+}
+body
+{
+    background-color:#C3C4CC;
+    display: flex;
+    min-height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: Inter;
+    font-weight: 300;
+
+}
+
+.container
+{
+    display: flex;
+    flex-direction: row;
+}
+.messenger
+{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column-reverse;
+    background-color:#D5E3EF;
+    min-width: 692px;
+    min-height: 528px;
+    border-radius:30px 0px 0px 30px;
+    padding: 20px;
+    
+}
+.profile
+{
+    background-color:white;
+    min-width: 307px;
+    min-height: 528px;
+    border-radius: 0px 30px 30px 0px;
+}
+.avatarka
+{
+    border-radius:100%;
+    width: 115px;
+    height: auto;
+}
+.profile
+{
+    padding: 10px;
+    display: flex;
+    justify-content:space-around;
+    flex-direction: column;
+    align-items:center;
+    font-size: 20px;
+    
+}
+.info
+{
+    background-color:#E1EEFA;
+    width: 229px;
+    height: 149px;
+    border-radius:20px;
+    padding: 10px;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #323366;
+}
+.FirstName
+{font-weight: 600;}
+.SecondName
+{font-weight: 600;}
+.E-mail
+{font-size: 12px; text-decoration: none;color: #323366;
+}
+.bttns
+{
+    
+    display: flex;
+    width: 287px;
+    justify-content:space-around;
+    flex-direction: row;
+    
+
+}
+.CreateApplication
+{
+    width: 163px;
+}
+div >button
+{
+    height: 41px;
+    background-color:#badaf7;
+    text-transform: uppercase;
+    border-radius:10px;
+    border:none;
+    color: #323366;
+    font-weight: 500;
+    font-size: 14px;
+}
+.LogOut
+{
+    width: 111px;
+}
+.appl1
+{
+    min-height: 89px;
+    width: 644px;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    padding: 10px;
+    background-color:#ffffffb0;
+    margin-bottom: 20px;
+    border-radius:20px;
+}
+.divnummess
+{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 79px;
+}
+.divnumber
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100px;
+    font-size: 20px;
+    font-weight: 400;
+    color:#5253a1;
+}
+.divmess
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 12px;
+    width: 365px;
+    margin-bottom: 20px;
+}
+#you
+{ color:#8b8b8b;}
+.divstatus
+{
+    color:#6889A5;
+}
+.Status
+{
+    font-size: 16px;
+    font-weight: 600;
+}
+#status
+{
+    font-size: 16px;
+    font-weight: 600;
+}

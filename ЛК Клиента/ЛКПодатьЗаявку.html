@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ЛКПодатьЗаявку.css">
+    <title>Личный кабинет</title>
+</head>
+<body>
+    <div class="container">
+        <div class="Application">
+            <div class="bttnback">
+                <button onclick="window.location.href='ЛК1.html'" class="sendback"><</button>
+               </div>
+          <div class="AppData">
+            <div class="Theme">
+                <label  for="theme">Тема обращения:</label>
+                <input id="theme" type="text" class="theme">
+              </div>
+              <div class="Equip">
+                <label  for="equip">Оборудование:</label>
+                <input id="equip" type="text" class="equip">
+              </div>
+              <div class="Descrip">
+                <label  for="description">Описание обращения:</label>
+                <textarea id="description" type="textarea" class="description"></textarea>
+              </div>
+          </div>
+        </div>
+        <div class="profile">
+            <div >
+                <img src="ава.jpg" alt="ava" class="avatarka">
+            </div>
+            <div class="info">
+                <p id="Fname" class="FirstName">Никита</p>
+                <p id="Sname" class="SecondName">Коев</p>
+                <a href="mailto:nikitakorovka@mail.ru" id="email" class="E-mail">nikitakorovka@mail.ru</a>
+            </div>
+            <div class="bttns">
+                <button onclick="window.location.href='ЛК1.html'" class="CreateApplication">подать заявление</button>
+                <button onclick="window.location.href='../Вход/Страница входа.html'" class="LogOut">Выйти</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
