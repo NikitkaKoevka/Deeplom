@@ -166,8 +166,53 @@
                    </div>
                 </li>
             </ul>
-            
+            <div class="Messanger">
+                <div class="MessHeader">
+                    <div class="MessTitle">
+                        <p>Завяление №1</p>
+                        <p>Тема: поломка Оборудования</p>
+                    </div>
+                    <b><p onclick="togglePlaque()">...</p></b>
+                    <div id="plaque" class="ChangeMess">
+                        <ul class="ChangeList">
+                            <li>
+                                <label for="Equip">Оборудование:</label>
+                                <input type="text" id="Equip">
+                            </li>
+                            <li>
+                                <label for="Respon">Ответственный за работу:</label>
+                                <select name="Sotrud" id="Respon">
+                                </select>
+                            </li>
+                            <li>
+                                <label for="Watcher">Смотрящий:</label>
+                                <select name="Admins" id="Watcher">
+                                </select>
+                            </li>
+                            <li>
+                                <label for="Status">Статус заявления:</label>
+                                <input type="text" id="Status">
+                            </li>
+                            <li>
+                                <label for="Deadline">Срок заявления:</label>
+                                <input type="text" id="Deadline">
+                            </li>
+                            <button class="RefreshBttn">Обновить</button>
+                        </ul>
+                    </div>
+                </div>
+                <div class="SotrudWriteBar">
+                    <textarea name="messagebox" id="" cols="30" rows="10" class="typetext" placeholder="Напишите сообщение"></textarea>
+                <label for="paperclip">
+                    <img src="/ЛК Клиента/скрепка.svg" alt="p" class="paperclip" >
+                </label>
+                <input id="paperclip" type="file" class="prikrepit">
+                <button class="send">Отправить</button>
+                </div>
+            </div>
         </div>
     </div>
+    <script src="/ЛК Сотрудника/scripts.js">
+    </script>
 </body>
 </html>
