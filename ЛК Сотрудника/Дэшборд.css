@@ -105,7 +105,7 @@ align-items: center;
     border-radius:30px;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 20px 40px;
     justify-content: space-around;
 }
 
@@ -142,22 +142,22 @@ align-items: center;
 .DiagSost
 {
     height: 450px;
-    width: 450px;
-    border:1px solid #aaa;
+    width: 420px;
+    border:1px solid #d9d9d9;
     border-radius: 30px;
 }
 .DiagOcenok
 {
     height: 450px;
-    width: 450px;
-    border:1px solid #aaa;
+    width: 420px;
+    border:1px solid #d9d9d9;
     border-radius: 30px;
 }
 .DiagLid
 {
     height: 150px;
     width: 600px;
-    border:1px solid #aaa;
+    border:1px solid #d9d9d9;
     border-radius: 30px;
 }
 .DiagRow
@@ -176,12 +176,16 @@ align-items: center;
 }
 .DashBttn
 {
-    width: 150px;
-    height: 30px;
+    width: 160px;
+    height: 40px;
     font-size: 15px;
     color:rgb(255, 255, 255);
     border: 0px;
     border-radius: 30px;
     font-family: Stolzl;
     background:linear-gradient(rgb(108, 132, 238),rgb(146, 171, 226))
+}
+.DashBttn:hover
+{
+    background:linear-gradient(rgb(86, 105, 190),rgb(121, 143, 190))
 }

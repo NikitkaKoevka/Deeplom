@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Слой_2" data-name="Слой 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 650">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #d9d9d9;
+      }
+    </style>
+  </defs>
+  <g id="Glyph">
+    <path class="cls-1" d="M0,325c0,41.3,33.6,75,75,75s75-33.7,75-75-33.7-75-75-75S0,283.6,0,325Z"/>
+    <path class="cls-1" d="M0,575c0,41.3,33.6,75,75,75s75-33.7,75-75-33.7-75-75-75S0,533.7,0,575Z"/>
+    <path class="cls-1" d="M0,75c0,41.4,33.6,75,75,75s75-33.6,75-75S116.3,0,75,0,0,33.7,0,75Z"/>
+  </g>
+</svg>

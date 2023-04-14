@@ -20,6 +20,7 @@ body
 {
     display: flex;
     flex-direction: row;
+    width: 70%;
 }
 .messenger
 {
@@ -27,18 +28,11 @@ body
     justify-content: flex-end;
     flex-direction: column-reverse;
     background-color:#D5E3EF;
-    min-width: 692px;
+    width: 70%;
     min-height: 528px;
     border-radius:30px 0px 0px 30px;
     padding: 20px;
-    
-}
-.profile
-{
-    background-color:white;
-    min-width: 307px;
-    min-height: 528px;
-    border-radius: 0px 30px 30px 0px;
+    border: 1px solid #d9d9d9;
 }
 .avatarka
 {
@@ -48,13 +42,20 @@ body
 }
 .profile
 {
-    padding: 10px;
+    background-color:white;
+    width: 30%;
+    min-width: 300px;
+    min-height: 528px;
+    border-radius: 0px 30px 30px 0px;
+    padding: 30px;
     display: flex;
-    justify-content:space-around;
+    justify-content:space-between;
     flex-direction: column;
     align-items:center;
     font-size: 20px;
-    
+    border-bottom: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
+    border-top: 1px solid #d9d9d9;
 }
 .info
 {
@@ -69,10 +70,7 @@ body
     justify-content: space-around;
     color: #323366;
 }
-.FirstName
-{font-weight: 600;}
-.SecondName
-{font-weight: 600;}
+
 .E-mail
 {font-size: 12px; text-decoration: none;color: #323366;
 }
@@ -86,10 +84,7 @@ body
     
 
 }
-.CreateApplication
-{
-    width: 163px;
-}
+
 div >button
 {
     height: 41px;
@@ -99,7 +94,7 @@ div >button
     border:none;
     color: #323366;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 12px;
 }
 .LogOut
 {
@@ -108,7 +103,8 @@ div >button
 .appl1
 {
     min-height: 89px;
-    width: 644px;
+    width: 100%;
+    min-width: 300px;
     display: flex;
     justify-content: space-around;
     align-items:center;
@@ -124,13 +120,15 @@ div >button
     flex-direction: column;
     justify-content: space-between;
     height: 79px;
+    width: 70%;
 }
 .divnumber
 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100px;
+    width: 20%;
+    min-width: 20%;
     font-size: 20px;
     font-weight: 400;
     color:#5253a1;
@@ -141,7 +139,8 @@ div >button
     flex-direction: row;
     justify-content: space-around;
     font-size: 12px;
-    width: 365px;
+    width: 80%;
+    min-width: 20%;
     margin-bottom: 20px;
 }
 #you
@@ -149,14 +148,6 @@ div >button
 .divstatus
 {
     color:#6889A5;
-}
-.Status
-{
-    font-size: 16px;
-    font-weight: 600;
-}
-#status
-{
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 600;
 }

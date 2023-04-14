@@ -64,7 +64,7 @@
             <div class="bottomlinks">
                 <div class="linkone">
                     <img src="../icons/branchicons/поддержка.svg" alt="icon">
-                    <a class="HrefLink"href="Поддержка.html">Поддержка</a >
+                    <p class="HrefLink" onclick="SupportAlert()">Поддержка</p >
                 </div>
                 <div class="linkone">
                     <img src="../icons/branchicons/шестеренка.svg" alt="icon">
@@ -172,7 +172,9 @@
                         <p>Завяление №1</p>
                         <p>Тема: поломка Оборудования</p>
                     </div>
-                    <b><p onclick="togglePlaque()">...</p></b>
+                    <div class="ThreeDots"  onclick="togglePlaque()">
+                        <img width="20px" height="20px" src="../icons/ThreeDots.svg" alt="...">
+                    </div>
                     <div id="plaque" class="ChangeMess">
                         <ul class="ChangeList">
                             <li>
@@ -204,7 +206,7 @@
                 <div class="SotrudWriteBar">
                     <textarea name="messagebox" id="" cols="30" rows="10" class="typetext" placeholder="Напишите сообщение"></textarea>
                 <label for="paperclip">
-                    <img src="../ЛК Клиента/скрепка.svg" alt="p" class="paperclip" >
+                    <img src="../icons/скрепка.svg" alt="p" class="paperclip" >
                 </label>
                 <input id="paperclip" type="file" class="prikrepit">
                 <button class="send">Отправить</button>

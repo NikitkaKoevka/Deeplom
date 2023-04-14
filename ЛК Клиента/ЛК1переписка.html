@@ -8,13 +8,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="ЛК1переписка.css">
+    <link rel="icon" href="ISTOK.ico">
     <title>Личный кабинет</title>
 </head>
 <body>
     <div class="container">
         <div class="messenger">
-           <div class="bttnback">
-            <button onclick="window.location.href='ЛК1.html'" class="sendback"><</button>
+           <div class="messheader">
+            <a  href="ЛК1.html">
+                <img class="sendback"src="../icons/SendBack.svg" alt="<">
+            </a>
+
+                <div class="SV">
+                    Заявление №
+                    <p id="NumberApplic">3</p>
+                </div>
+                <div class="SV">
+                    Статус:
+                    <p id="Stattype">Обработка</p>
+                </div>
+                <div class="SV">
+                    Сотрудник:
+                    <p id="Ivanov">Олег</p>
+                </div>
            </div>
 
            <div class="messages">
@@ -25,7 +41,7 @@
            <div class="sendmess">
             <textarea name="messagebox" id="" cols="30" rows="10" class="typetext" placeholder="Напишите сообщение"></textarea>
             <label for="paperclip">
-                <img src="скрепка.svg" alt="p" class="paperclip">
+                <img src="../icons/скрепка.svg" alt="p" class="paperclip">
             </label>
             <input id="paperclip" type="file" >
             <button class="send">Отправить</button>
@@ -41,20 +57,7 @@
                 <p id="Sname" class="SecondName">Коев</p>
                 <a href="mailto:nikitakorovka@mail.ru" id="email" class="E-mail">nikitakorovka@mail.ru</a>
             </div>
-            <div class="SvodkaZayavleniya">
-                <div class="Zayavlenie">
-                    <p >Заявление №</p>
-                    <p id="NumberApplic">1</p>
-                </div>
-                <div class="Status">
-                    <p >Статус:</p>
-                    <p id="Stattype">Обработка</p>
-                </div>
-                <div class="Emploee">
-                    <p >Сотрудник:</p>
-                    <p id="Ivanov">Олег</p>
-                </div>
-            </div>
+            
         </div>
     </div>
 </body>

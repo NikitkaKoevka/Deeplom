@@ -151,7 +151,7 @@ align-items: center;
     height: 42px;
     width: 300px;
     border-radius:10px;
-    border:solid 1px #aaaaaa;
+    border:solid 1px #d9d9d9;
     padding-left: 15px;
 }
 .SearchBttn
@@ -160,8 +160,12 @@ align-items: center;
     height: 42px;
     width: 40px;
     border-radius:10px;
-    border:solid 1px #aaaaaa;
+    border:solid 1px #d9d9d9;
 
+}
+.SearchBttn:hover
+{
+    background-color: #ddd;
 }
 .Search
 {   margin: 0px;
