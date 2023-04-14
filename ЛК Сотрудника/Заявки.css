@@ -264,7 +264,7 @@ select
 {
    
     max-height: 50px;
-    max-width: 350px;
+    max-width: 70%;
     border-radius:10px;
     font-family: Inter;
     padding: 15px;
