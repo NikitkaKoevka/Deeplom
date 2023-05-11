@@ -15,6 +15,10 @@ body
     font-family: Inter;
     font-weight: 300;
 }
+ul
+{
+    min-width: 50%;
+}
 a{text-decoration: none;color: #000;}
 img {width: 25px;}
 #plaque {
@@ -103,6 +107,7 @@ header
     border-radius:30px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     padding: 20px;
 
 }
