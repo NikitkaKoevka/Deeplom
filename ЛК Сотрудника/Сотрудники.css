@@ -3,7 +3,7 @@ html
 {
     height: 100%;
     width: 100%;
-    
+
 }
 button
 {
@@ -28,7 +28,8 @@ body
     font-weight: 300;
 
 }
-a{text-decoration: none;}
+.HrefLink
+{ margin-left:10px ;color: #4C5395;text-decoration: none;}
 li {list-style-type: none;}
 header
 {
@@ -254,8 +255,7 @@ input[type="file"]
     align-items:center;
   
 }
-.HrefLink
-{ margin-left:10px ;}
+
 .paperclip
 {
     width: 15px;

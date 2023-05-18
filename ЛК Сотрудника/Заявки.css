@@ -19,11 +19,14 @@ ul
 {
     min-width: 50%;
 }
-a{text-decoration: none;color: #000;}
+.HrefLink
+{ margin-left:10px ;color: #4C5395;text-decoration: none;}
 img {width: 25px;}
 #plaque {
     display: none;
+    transition: 1s;
   }
+
 .ISTOK{width: 125px;}
 .Ava
 {width: 70px; height: 70px; border-radius:100%}
@@ -129,7 +132,7 @@ header
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    font-size: 14px;
+    font-size: 12px;
 }
 .number
 {   
@@ -155,8 +158,7 @@ header
     flex-direction: row;
     align-items:center;
 }
-.HrefLink
-{ margin-left:10px ;}
+
 ul
 {
     display: flex;

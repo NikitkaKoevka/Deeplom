@@ -16,7 +16,8 @@ body
     font-weight: 300;
 
 }
-a{text-decoration: none;}
+.HrefLink
+{ margin-left:10px ;color: #4C5395;text-decoration: none;}
 img {width: 25px;}
 .ISTOK{width: 125px;}
 .Ava
@@ -136,8 +137,7 @@ align-items: center;
     align-items:center;
   
 }
-.HrefLink
-{ margin-left:10px ;}
+
 
 .DiagSost
 {

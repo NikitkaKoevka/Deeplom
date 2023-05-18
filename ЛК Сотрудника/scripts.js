@@ -1,15 +1,22 @@
 var flag=1;
 function togglePlaque() {
-    var plaque = document.getElementById("plaque");
-    if (plaque.style.display === "none"|| flag==1 ) {
-      console.log("1");
-      plaque.style.display = "block";
-      flag=0;
-    } else if( flag==0) {
-      console.log("2");
+  var plaque = document.getElementById("plaque");
+  if (plaque.style.display === "none" || flag == 1) {
+    plaque.style.display = "block";
+    plaque.style.opacity = "0";
+    plaque.style.transition = "opacity 0.2s";
+    setTimeout(function() {
+      plaque.style.opacity = "1";
+    }, 10);
+    flag = 0;
+  } else if (flag == 0) {
+    plaque.style.opacity = "0";
+    plaque.style.transition = "opacity 0.2s";
+    setTimeout(function() {
       plaque.style.display = "none";
-    }
+    }, 100);
   }
+}
 
 
   function SupportAlert()

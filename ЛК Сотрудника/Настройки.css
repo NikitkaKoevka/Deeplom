@@ -16,7 +16,8 @@ body
     font-weight: 300;
 
 }
-a{text-decoration: none;}
+.HrefLink
+{ margin-left:10px ;color: #4C5395;text-decoration: none;}
 img {width: 25px;}
 .ISTOK{width: 125px;}
 .Ava
@@ -135,8 +136,6 @@ ul{margin-left:20px ;}
     align-items:center;
   
 }
-.HrefLink
-{ margin-left:10px ;}
 
 .General
 {
@@ -144,7 +143,7 @@ ul{margin-left:20px ;}
     background-color:#ffffff;
     display: flex;
     flex-direction: column;
-    border-radius:30px;
+    border-radius:20px;
     justify-content: space-around;
     padding: 10px 30px;
 }
@@ -179,7 +178,7 @@ ul{margin-left:20px ;}
     background-color:#ffffff;
     display: flex;
     flex-direction: row;
-    border-radius:30px;
+    border-radius:20px;
     padding: 30px;
     align-items:center;
 }
@@ -193,7 +192,7 @@ ul{margin-left:20px ;}
 }
 .Rights
 {
-    border-radius:30px;
+    border-radius:20px;
     padding: 10px 30px;
     min-width: 70%;
     background-color:#ffffff;
@@ -230,7 +229,7 @@ select,button,input
 }
 .License
 {
-    border-radius:30px;
+    border-radius:20px;
     padding: 10px 30px;
     min-width: 70%;
     background-color:#ffffff;
