@@ -66,7 +66,12 @@ a{height: 20px;}
     border:none;
     font-weight: 600;
     font-size: 12px;
-
+    transition:  0.2s ;
+}
+button:hover
+{
+    background-color:#c0c0c0;
+    transition:  0.2s ;
 }
 .messheader
 {
@@ -113,14 +118,14 @@ a{height: 20px;}
 }
 .info
 {
-    background-color:#E1EEFA;
-    width: 229px;
-    height: 149px;
+    position: absolute;
+    width: 170px;
+    height: 190px;
+    top:290px;
     border-radius:20px;
     padding: 10px;
-    padding-left: 30px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     color: #323366;
 }

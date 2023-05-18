@@ -59,14 +59,14 @@ body
 }
 .info
 {
-    background-color:#E1EEFA;
-    width: 229px;
-    height: 149px;
+    position: absolute;
+    width: 170px;
+    height: 190px;
+    top:290px;
     border-radius:20px;
     padding: 10px;
-    padding-left: 30px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     color: #323366;
 }
@@ -95,6 +95,12 @@ div >button
     color: #323366;
     font-weight: 500;
     font-size: 12px;
+    transition:  0.2s ;
+}
+button:hover
+{
+    background-color:#a9c6e0;
+    transition:  0.2s ;
 }
 .LogOut
 {
@@ -146,6 +152,10 @@ div >button
 #you
 { color:#8b8b8b;}
 .divstatus
+{
+    font-size: 13px;
+}
+#status
 {
     color:#6889A5;
     font-size: 13px;
