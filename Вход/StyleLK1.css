@@ -72,8 +72,32 @@ body
     font-size: 13px;
     white-space: pre-line;/*//////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!////////////////*/
     margin-left: 0px;
+    box-shadow: 1px 5px 12px 0px rgb(167, 167, 167);
+    transition: height 0.1s, width 0.1s ;
+}
+.LogIn:hover
+{
+    width: 166px;
+    height: 50px;
+    transition: height 0.1s, width 0.1s ;
 }
 .LinkBtn
+{
+    width: 170px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.BtnSend
+{
+    width: 520px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.footerPlaq
 {
     display: flex;
     justify-content: space-around;
@@ -90,7 +114,7 @@ label ~ input,textarea
     border-radius: 7px;
     font-size: 14px;
     padding-left: 10px;
-    
+    box-shadow: 1px 5px 12px 0px rgba(167, 167, 167, 0.5);
 }
 
 .FullName
@@ -119,12 +143,16 @@ label ~ input,textarea
     font-size: 13px;
     white-space: pre-line;
     margin-left: 0px;
+    box-shadow: 1px 5px 12px 0px rgb(167, 167, 167);
+    transition: height 0.1s, width 0.1s ;
 }
-.BtnSend
+.send:hover
 {
-    display: flex;
-    justify-content: center;
+    width: 166px;
+    height: 43px;
+    transition: height 0.1s, width 0.1s ;
 }
+
 .Zareg
 {
     text-decoration:none;

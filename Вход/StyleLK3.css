@@ -40,8 +40,23 @@ body
     font-size: 13px;
     white-space: pre-line;/*//////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!////////////////*/
     margin-left: 0px;
+    box-shadow: 1px 5px 12px 0px rgb(167, 167, 167);
+    transition: height 0.1s, width 0.1s ;
 }
-
+.LogIn:hover
+{
+    width: 179px;
+    height: 50px;
+    transition: height 0.1s, width 0.1s ;
+}
+.LinkBtn
+{
+    width: 190px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
 div >div,button {margin-top: 20px;margin-bottom: 20px; }
 label ~ input
 {
@@ -54,6 +69,7 @@ label ~ input
     border-radius: 7px;
     font-size: 14px;
     padding-left: 10px;
+    box-shadow: 1px 5px 12px 0px rgba(167, 167, 167, 0.5);
     
 }
 .description

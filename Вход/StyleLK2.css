@@ -27,7 +27,14 @@ body
 }
 
 /* Подумай над шрифтом */
-
+.LinkBtn
+{
+    width: 170px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
 .LogIn
 {
     width: 161px;
@@ -40,8 +47,15 @@ body
     font-size: 13px;
     white-space: pre-line;/*//////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!////////////////*/
     margin-left: 0px;
+    box-shadow: 1px 5px 12px 0px rgb(167, 167, 167);
+    transition: height 0.1s, width 0.1s ;
 }
-
+.LogIn:hover
+{
+    width: 166px;
+    height: 50px;
+    transition: height 0.1s, width 0.1s ;
+}
 div >div {margin-top: 20px;margin-bottom: 20px; }
 label ~ input
 {
@@ -54,6 +68,7 @@ label ~ input
     border-radius: 7px;
     font-size: 14px;
     padding-left: 10px;
+    box-shadow: 1px 5px 12px 0px rgba(167, 167, 167, 0.664);
     
 }
 .description
