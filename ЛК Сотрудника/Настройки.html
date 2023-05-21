@@ -8,26 +8,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Настройки.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="BttnLinks.css">
+    <link rel="stylesheet" href="body.css">
     <title>Настройки</title>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <a href="Заявки.html">
-            <img src="../icons/ISTOK.svg" class="ISTOK" alt="ISTOK">
-            </a>
-        </div>
-        <div class="SotrudInfo">
-            <div class="SI1">
-                <p class="FLName">
-                    Никита Конев
-                </p >
-                <a href="../Вход/Страница входа.html" class="LogOut">Выход</a>
+        <div class="HeaderComplete">
+            <div class="logo">
+                <a href="Заявки.html">
+                <img src="../icons/ISTOK.svg" class="ISTOK" alt="ISTOK">
+                </a>
             </div>
-            <div class="SI2">
-                <img src="../icons/IMG_3675.JPG" alt="Ava" class="Ava">
+            <div class="SotrudInfo">
+                <div class="SI1">
+                    <p class="FLName">
+                        Никита Конев
+                    </p >
+                    <a href="../Вход/Страница входа.html" class="LogOut">Выход</a>
+                </div>
+                <div class="SI2">
+                    <img src="../icons/IMG_3675.JPG" alt="Ava" class="Ava">
+                </div>
             </div>
         </div>
+        
     </header>
     <div class="container">
         <div class="linkbars">
@@ -75,7 +82,7 @@
                 <ul>
                     <li>
                         <label for="ViewMode">Режим по умолчанию при просмотре заявления</label>
-                        <select name="Mode" id="ViewMode">
+                        <select name="Mode" id="ViewMode" class="Selection">
                             <option value="None">Не использовать режимы</option>
                             <option value="InProcess">В процессе</option>
                         </select>
@@ -87,7 +94,7 @@
                     </li>
                     <li>
                         <label for="Close">Значение по умолчанию для поля “закрыть при отсутствии ответа через”</label>
-                        <select name="WhenClose" id="Close">
+                        <select name="WhenClose" id="Close"class="Selection">
                             <option value="None">Не закрывать</option>
                             <option value="10Min">10 минут</option>
                             <option value="20Min">20 минут</option>
@@ -104,10 +111,10 @@
             </div>
             <div class="SLA">
                 <p>SLA:</p>
-                <button id="SLAbttnOpen">
+                <button id="SLAbttnOpen"class="SettingsBttn">
                     Открыть SLA
                 </button>
-                <button id="SLAbttnLoad">
+                <button id="SLAbttnLoad"class="SettingsBttn">
                     Загрузить SLA
                 </button>
             </div>
@@ -117,36 +124,36 @@
                     <div class="Block1">
                         <label for="Users">Клиенты:</label>
                         <div class="SubBlock1">
-                            <select name="UserList" id="Users">
+                            <select name="UserList" id="Users"class="Selection">
                                 <option value=""></option>
                             </select>
-                            <select name="AccessLvl" id="Lvl">
+                            <select name="AccessLvl" id="Lvl"class="Selection">
                                 <option value="Client">Клиент</option>
                                 <option value="Sotrud">Сотрудник</option>
                                 <option value="Admin">Админ</option>
                             </select>
-                            <button>Обновить</button>
+                            <button class="SettingsBttn">Обновить</button>
                         </div>
                     </div>
                     <div class="Block2">
                         <label for="Users">Сотрудники:</label>
                         <div class="SubBlock2">
-                            <select name="SotrList" id="Sotrud">
+                            <select name="SotrList" id="Sotrud"class="Selection">
                                 <option value=""></option>
                             </select>
-                            <select name="AccessLvl" id="Lvl">
+                            <select name="AccessLvl" id="Lvl"class="Selection">
                                 <option value="Client">Клиент</option>
                                 <option value="Sotrud">Сотрудник</option>
                                 <option value="Admin">Админ</option>
                             </select>
-                            <button>Обновить</button>
+                            <button class="SettingsBttn">Обновить</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="License">
                 <p>Лицензия:</p>
-                <button class="LicenseBttn">Открыть документ лицензии</button>
+                <button class="SettingsBttn">Открыть документ</button>
             </div>
         </div>
     </div>

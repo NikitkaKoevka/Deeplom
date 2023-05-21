@@ -8,26 +8,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Заявки.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="BttnLinks.css">
+    <link rel="stylesheet" href="body.css">
     <title>Заявки</title>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <a href="Заявки.html">
-            <img src="../icons/ISTOK.svg" class="ISTOK" alt="ISTOK">
-            </a>
-        </div>
-        <div class="SotrudInfo">
-            <div class="SI1">
-                <p class="FLName">
-                    Никита Конев
-                </p >
-                <a href="../Вход/Страница входа.html" class="LogOut">Выход</a>
+        <div class="HeaderComplete">
+            <div class="logo">
+                <a href="Заявки.html">
+                <img src="../icons/ISTOK.svg" class="ISTOK" alt="ISTOK">
+                </a>
             </div>
-            <div class="SI2">
-                <img src="../icons/IMG_3675.JPG" alt="Ava" class="Ava">
+            <div class="SotrudInfo">
+                <div class="SI1">
+                    <p class="FLName">
+                        Никита Конев
+                    </p >
+                    <a href="../Вход/Страница входа.html" class="LogOut">Выход</a>
+                </div>
+                <div class="SI2">
+                    <img src="../icons/IMG_3675.JPG" alt="Ava" class="Ava">
+                </div>
             </div>
         </div>
+        
     </header>
     <div class="container">
         <div class="linkbars">
@@ -72,102 +79,27 @@
         <div class="Applications">
             <ul>
                 <li id="a1" class="Zayavlenie">
-                    <div class="1Part">
-                        <div class="number">
-                            <p>Заявка</p>
-                            <p class="nubmer">1</p>
+                        <p id="Equip">Принтер HP Jetset 2700</p>
+                        <p id="Theme">Сломался принтер</p>
+                        <div class="ZayavBttn">
+                            <p  id="number">П12300023</p>
+                            <p id="ClientName">Инна</p>
+                            <p id="Status">В ожидании</p>
+                            <div class="Date">
+                                <p id="Chislo">19.05.23</p>
+                                <p id="Time">23:33</p>
+                            </div>
                         </div>
-                        <div class="mess">
-                            <p id="client">Никита:</p>
-                            <p class="shortmess">Здравствуйте, возникла проблема с оборудованием</p>
-                        </div>
-                    </div>
-                    <div class="Description">
-                        <div>
-                            <p>Тип:</p>
-                            <div id="typeservice">Обслуживание</div>
-                        </div>
-                        <div>
-                            <p>Приоритет:</p>
-                            <div id="typepriority">низкий</div>
-                        </div>
-                        <div>
-                            <p>Ответственный:</p>
-                            <div id="typeresponce">Куликов Артем</div>
-                        </div>
-                        <div>
-                            <p>Статус:</p>
-                            <div id="typestatus">Завершено</div>
-                        </div>
-                    </div>
+
                     
                 </li>
-                <li id="a2" class="Zayavlenie">
-                    <div class="1Part">
-                        <div class="number">
-                            <p>Заявка</p>
-                            <p class="nubmer">2</p>
-                        </div>
-                        <div class="mess">
-                            <p id="client">Никита:</p>
-                            <p class="shortmess">Здравствуйте, возникла проблема с оборудованием</p>
-                        </div>
-                    </div>
-                    <div class="Description">
-                    <div>
-                        <p>Тип:</p>
-                        <div id="typeservice">Обслуживание</div>
-                    </div>
-                    <div>
-                        <p>Приоритет:</p>
-                        <div id="typepriority">низкий</div>
-                    </div>
-                    <div>
-                        <p>Ответственный:</p>
-                        <div id="typeresponce">Куликов Артем</div>
-                    </div>
-                    <div>
-                        <p>Статус:</p>
-                        <div id="typestatus">Завершено</div>
-                    </div>
-                    </div>
-                </li>
-                <li id="a3" class="Zayavlenie">
-                    <div class="1Part">
-                        <div class="number">
-                            <p>Заявка</p>
-                            <p class="nubmer">3</p>
-                        </div>
-                        <div class="mess">
-                            <p id="client">Никита:</p>
-                            <p class="shortmess">Здравствуйте, возникла проблема с оборудованием</p>
-                        </div>
-                    </div>
-                   <div class="Description">
-                    <div>
-                        <p>Тип:</p>
-                        <div id="typeservice">Обслуживание</div>
-                    </div>
-                    <div>
-                        <p>Приоритет:</p>
-                        <div id="typepriority">низкий</div>
-                    </div>
-                    <div>
-                        <p>Ответственный:</p>
-                        <div id="typeresponce">Куликов Артем</div>
-                    </div>
-                    <div>
-                        <p>Статус:</p>
-                        <div id="typestatus">Завершено</div>
-                    </div>
-                   </div>
-                </li>
+
             </ul>
             <div class="Messanger">
                 <div class="MessHeader">
                     <div class="MessTitle">
-                        <p>Завяление №1</p>
-                        <p>Тема: поломка Оборудования</p>
+                        <p>Завяление №П12300023</p>
+                        <p>Тема: Сломался принтер</p>
                     </div>
                     <div class="ThreeDots"  onclick="togglePlaque()">
                         <img width="20px" height="20px" src="../icons/ThreeDots.svg" alt="...">
@@ -175,8 +107,12 @@
                     <div id="plaque" class="ChangeMess">
                         <ul class="ChangeList">
                             <li>
-                                <label for="Equip">Оборудование:</label>
-                                <input type="text" id="Equip">
+                                <label for="Equip">Телефон клиента:</label>
+                                <input type="text" id="Phone">
+                            </li>
+                            <li>
+                                <label for="Equip">Почта клиента:</label>
+                                <input type="text" id="Email">
                             </li>
                             <li>
                                 <label for="Respon">Ответственный за работу:</label>
@@ -189,14 +125,15 @@
                                 </select>
                             </li>
                             <li>
-                                <label for="Status">Статус заявления:</label>
-                                <input type="text" id="Status">
+                                <label for="Statusi">Статус заявления:</label>
+                                <select name="TypeOfStatus" id="Statusi">
+                                </select>
                             </li>
                             <li>
-                                <label for="Deadline">Срок заявления:</label>
-                                <input type="text" id="Deadline">
+                                <button class="RefreshBttn">Обновить</button>
+                                <button class="FinnishBttn">Завершить</button>
                             </li>
-                            <button class="RefreshBttn">Обновить</button>
+                           
                         </ul>
                     </div>
                 </div>

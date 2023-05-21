@@ -101,6 +101,7 @@ body
 {
     display: flex;
     justify-content: space-around;
+    align-items:center;
 }
 div > label,input,textarea,button {margin-left: 40px; }
 label ~ input,textarea

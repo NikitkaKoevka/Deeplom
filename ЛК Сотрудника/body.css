@@ -1,0 +1,10 @@
+body
+{
+    background-color:#dbdbdb;
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 13px;
+}

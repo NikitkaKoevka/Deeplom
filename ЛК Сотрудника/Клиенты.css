@@ -1,124 +1,36 @@
-* {margin: 0; padding: 0; box-sizing: border-box;}
+* {margin: 0px; padding: 0px; box-sizing: border-box;}
 html
 {
     height: 100%;
     width: 100%;
 }
-button
-{
-    width: 160px;
-    height: 45px;
-    border-radius: 10px;
-    border: solid 1px #d9d9d9;
-}
-button:hover
-{
-    background-color: #ddd;
-}
-body
-{
-    background-color:#dbdbdb;
-    display: flex;
-    min-height: 100%;
-    padding-bottom: 40px;
-    flex-direction: column;
-    align-items: center;
-    font-family: Inter;
-    font-weight: 300;
 
-}
-a{text-decoration: none;color: #4C5395;}
+a{text-decoration: none;color: #203cb8;}
 li {list-style-type: none;}
-header
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 100px;
-    padding: 10px;
-    min-width: 100%;
-    background-color:#ffffff;
-}
-img {width: 25px;}
-.ISTOK{width: 125px;}
-.Ava
-{width: 70px; height: 70px; border-radius:100%}
-.SotrudInfo
-{
-    display: flex;
-    flex-direction: row;
-    min-width: 300px;
-}
-.SI1
-{
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-weight: 400;
-}
-.LogOut
-{
-    text-decoration: none;
-    color: #8194b8;
-}
-.SI2
-{
-    padding: 20px;
-    display: flex;
-    align-items: center;
-}
-.logo
-{
-padding: 20px;
-display: flex;
-    align-items: center;
-}
+
 .container
 {
     display: flex;
     flex-direction: row;
-   
+    justify-content: center;
     padding-top: 20px;
     padding-left:10px ;
     padding-right: 10px;
     min-width: 100%;
+    min-height: 600px;
+}
 
-}
-.linkbars
-{
-
-    padding-right: 20px;
-    min-height: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.mainlinks
-{
-    min-height:60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
-    
-}
-.bottomlinks
-{
-    min-height: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 .Users
 {
-    min-width: 45%;
-    min-height: 800px;
+    min-width: 400px;
+    min-height: 600px;
+    max-height: 100%;
     background-color:#ffffff;
-    border-radius:30px;
+    border-radius:20px;
     display: flex;
-    flex-direction: column;   
-   
+    flex-direction: column;
+
+    padding: 10px;
 
 }
 .UserList
@@ -141,7 +53,7 @@ display: flex;
 }
 .SearchInput
 {
-    height: 42px;
+    height: 32px;
     width: 345px;
     border-radius:10px;
     border:solid 1px #d9d9d9;
@@ -150,8 +62,8 @@ display: flex;
 .SearchBttn
 {
     margin-left: 5px;
-    height: 42px;
-    width: 40px;
+    height: 32px;
+    width: 32px;
     border-radius:10px;
     border:solid 1px #d9d9d9;
 
@@ -171,8 +83,8 @@ display: flex;
 
 .Polzovateli
 {
-    padding: 30px;
-    height: 70px;
+    padding: 20px;
+    height: 50px;
     width: 100%;
     border-bottom: 1px solid #d9d9d9;
     color: #000000;
@@ -201,12 +113,3 @@ display: flex;
     font-weight: 300;
     
 }
-.linkone
-{
-    display: flex;
-    flex-direction: row;
-    align-items:center;
-  
-}
-.HrefLink
-{ margin-left:10px ;}

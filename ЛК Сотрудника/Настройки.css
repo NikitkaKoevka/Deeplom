@@ -4,108 +4,31 @@ html
     height: 100%;
     width: 100%;
 }
-body
-{
-    background-color:#dbdbdb;
-    display: flex;
-    min-height: 800px;
-    padding-bottom: 40px;
-    flex-direction: column;
-    align-items: center;
-    font-family: Inter;
-    font-weight: 300;
 
-}
-.HrefLink
-{ margin-left:10px ;color: #4C5395;text-decoration: none;}
-img {width: 25px;}
-.ISTOK{width: 125px;}
-.Ava
-{width: 70px; height: 70px; border-radius:100%}
-header
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 100px;
-    padding: 10px;
-    min-width: 100%;
-    background-color:#ffffff;
-}
-.SotrudInfo
-{
-    display: flex;
-    flex-direction: row;
-    min-width: 300px;
-}
-.SI1
-{
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-weight: 400;
-}
-.LogOut
-{
-    text-decoration: none;
-    color: #8194b8;
-}
-.SI2
-{
-    padding: 20px;
-    display: flex;
-    align-items: center;
-}
-.logo
-{
-padding: 20px;
-display: flex;
-align-items: center;
-}
 .container
 {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     padding-top: 20px;
     padding-left:10px ;
     padding-right: 10px;
     min-width: 100%;
+    min-height: 600px;
+}
 
-}
-.linkbars
-{
-
-    padding-right: 20px;
-    min-height: 800px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.mainlinks
-{
-    min-height:60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
-    
-}
-.bottomlinks
-{
-    min-height: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 .Settings
 {
-    min-width: 700px;
-    max-height: 500px;
+    min-width: 750px;
+    min-height: 400px;
+    max-height: 400px;
+    background-color:#ffffff;
+    border-radius:20px;
     display: flex;
     flex-direction: column;
-    padding: 0px 40px;
-    justify-content: space-between;
+    justify-content: space-around;
+    padding: 20px;
+    font-weight: 300;
 }
 
 li{list-style:none ;margin-top: 10px;}
@@ -129,14 +52,6 @@ ul{margin-left:20px ;}
     font-weight: 300;
     
 }
-.linkone
-{
-    display: flex;
-    flex-direction: row;
-    align-items:center;
-  
-}
-
 .General
 {
     min-width: 70%;
@@ -145,32 +60,15 @@ ul{margin-left:20px ;}
     flex-direction: column;
     border-radius:20px;
     justify-content: space-around;
-    padding: 10px 30px;
 }
-.SearchInput
+.Selection
 {
-    height: 42px;
-    width: 300px;
-    border-radius:10px;
-    border:solid 1px #d9d9d9;
-    padding-left: 15px;
+    font-size: 12px;
 }
-.SearchBttn
+.SettingsBttn
 {
-    margin-left: 5px;
-    height: 42px;
-    width: 40px;
-    border-radius:10px;
-    border:solid 1px #d9d9d9;
-
-}
-.Search
-{   margin: 0px;
-    padding: 15px;
-    padding-left: 30px;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
+    width: 80px;
+    height: 40px;
 }
 .SLA
 {
@@ -179,7 +77,6 @@ ul{margin-left:20px ;}
     display: flex;
     flex-direction: row;
     border-radius:20px;
-    padding: 30px;
     align-items:center;
 }
 #SLAbttnOpen
@@ -193,7 +90,6 @@ ul{margin-left:20px ;}
 .Rights
 {
     border-radius:20px;
-    padding: 10px 30px;
     min-width: 70%;
     background-color:#ffffff;
     display: flex;
@@ -230,20 +126,14 @@ select,button,input
 .License
 {
     border-radius:20px;
-    padding: 10px 30px;
     min-width: 70%;
     background-color:#ffffff;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
 }
-
 .LicenseBttn
 {
     margin-top:10px ;
     max-width: 150px;
-}
-button:hover
-{
-    background-color: #ddd;
 }

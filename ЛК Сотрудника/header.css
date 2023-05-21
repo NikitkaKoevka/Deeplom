@@ -1,0 +1,54 @@
+header
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 50px;
+    padding: 10px;
+    min-width: 100%;
+    background-color:#ffffff;
+}
+img {width: 25px;}
+.ISTOK{width: 60px;}
+.Ava
+{width: 40px; border-radius:100%}
+.HeaderComplete
+{
+    width: 1090px;
+    display: flex;
+    justify-content: space-between;
+}
+.SotrudInfo
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.SI1
+{
+    font-size: small;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 400;
+}
+.LogOut
+{
+    text-decoration: none;
+    color: #8194b8;
+}
+.SI2
+{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+.logo
+{
+    padding-left: 20px;
+    padding-top: 3px;
+    display: flex;
+    align-items: center;
+}

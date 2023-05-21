@@ -3,148 +3,36 @@ html
 {
     height: 100%;
     width: 100%;
+}
 
-}
-button
-{
-    width: 100px;
-    height: 40px;
-    border-radius: 10px;
-    border: solid 1px #d9d9d9;
-}
-button:hover
-{
-    background-color: #ddd;
-}
-body
-{
-    background-color:#dbdbdb;
-    display: flex;
-    min-height: 100%;
-    padding-bottom: 40px;
-    flex-direction: column;
-    align-items: center;
-    font-family: Inter;
-    font-weight: 300;
 
-}
-.HrefLink
-{ margin-left:10px ;color: #4C5395;text-decoration: none;}
 li {list-style-type: none;}
-header
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 100px;
-    padding: 10px;
-    min-width: 100%;
-    background-color:#ffffff;
-}
-img {width: 25px;}
-.ISTOK{width: 125px;}
-.Ava
-{width: 70px; height: 70px; border-radius:100%}
-.SotrudInfo
-{
-    display: flex;
-    flex-direction: row;
-    min-width: 300px;
-}
-.SI1
-{
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-weight: 400;
-}
-.LogOut
-{
-    text-decoration: none;
-    color: #8194b8;
-}
-.SI2
-{
-    padding: 20px;
-    display: flex;
-    align-items: center;
-}
-.logo
-{
-padding: 20px;
-display: flex;
-    align-items: center;
-}
+
 .container
 {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     padding-top: 20px;
     padding-left:10px ;
     padding-right: 10px;
     min-width: 100%;
+    min-height: 600px;
+}
 
-}
-.linkbars
-{
-
-    padding-right: 20px;
-    min-height: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.mainlinks
-{
-    min-height:60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
-    
-}
-.bottomlinks
-{
-    min-height: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 .Sotrud
 {
-    min-width: 45%;
-    min-height: 800px;
+    min-width: 400px;
+    min-height: 600px;
+    max-height: 100%;
     background-color:#ffffff;
-    border-radius:30px ;
+    border-radius:20px;
     display: flex;
-    flex-direction: column;   
-    border-right: 1px solid #d9d9d9;
+    flex-direction: column;
+    padding: 10px;
+}
 
-}
-.SotrudDialog
-{
-    min-width: 40%;
-    min-height: 800px;
-    background-color:#dcebfd;
-    border-radius:0px 30px 30px 0px;
-    display: flex;
-    flex-direction: column; 
-    justify-content: space-between; 
-}
-input[type="file"] 
-{
-    display: none;
-}
-.typetext
-{
-    max-height: 50px;
-    min-width: 70%;
-    border-radius:10px;
-    font-family: Inter;
-    padding: 15px;
-    border:1px solid #d9d9d9;
-}
+
 .UserList
 {
     display: flex;
@@ -163,7 +51,7 @@ input[type="file"]
 }
 .SearchInput
 {
-    height: 42px;
+    height: 32px;
     width: 345px;
     border-radius:10px;
     border:solid 1px #d9d9d9;
@@ -172,8 +60,8 @@ input[type="file"]
 .SearchBttn
 {
     margin-left: 5px;
-    height: 42px;
-    width: 40px;
+    height: 32px;
+    width: 32px;
     border-radius:10px;
     border:solid 1px #d9d9d9;
 
@@ -190,24 +78,11 @@ input[type="file"]
 {
     width: 100%;
 }
-.SotrudMessTitle
-{
-    padding: 30px;
-    height: 70px;
-    width: 100%;
-    border-bottom:1px solid #d9d9d9;
-    background-color:#ffffff;
-    border-radius:0px 30px 0px 0px;
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    font-weight: 600;
-    color:rgb(65, 118, 139)
-}
+
 .SotrudTitle
 {
-    padding: 30px;
-    height: 70px;
+    padding: 20px;
+    height: 50px;
     width: 100%;
     border-bottom: 1px solid #d9d9d9;
     color: #000000;
@@ -227,18 +102,7 @@ input[type="file"]
     color: #000000;
     font-weight: 300;
 }
-.SotrudWriteBar
-{
-    min-height: 75px;
-    border-radius:0px 0px 30px 0px;
-    background-color:#FFFFFF;
-    padding-right: 20px;
-    padding-left: 20px;
-    display: flex;
-    justify-content: space-around;
-    align-items:center;
-    flex-direction: row;
-}
+
 .mess
 {
     margin-top: 10px;
@@ -247,13 +111,6 @@ input[type="file"]
     color: #000000;
     font-weight: 300;
     
-}
-.linkone
-{
-    display: flex;
-    flex-direction: row;
-    align-items:center;
-  
 }
 
 .paperclip

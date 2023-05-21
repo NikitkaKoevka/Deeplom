@@ -4,70 +4,19 @@ html
     height: 100%;
     width: 100%;
 }
-body
-{
-    background-color:#dbdbdb;
-    display: flex;
-    min-height: 100%;
-    padding-bottom: 40px;
-    flex-direction: column;
-    align-items: center;
-    font-family: Inter;
-    font-weight: 300;
-}
 ul
 {
     min-width: 50%;
 }
-.HrefLink
-{ margin-left:10px ;color: #4C5395;text-decoration: none;}
-img {width: 25px;}
-#plaque {
+#plaque 
+{
     display: none;
     transition: 1s;
-  }
-
-.ISTOK{width: 125px;}
-.Ava
-{width: 70px; height: 70px; border-radius:100%}
-header
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 100px;
-    padding: 10px;
-    min-width: 100%;
-    background-color:#ffffff;
-}
-.SotrudInfo
-{
-    display: flex;
-    flex-direction: row;
-    min-width: 300px;
-}
-.SI1
-{
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-weight: 400;
-}
-.LogOut
-{
-    text-decoration: none;
-    color: #8194b8;
-}
-.SI2
-{
-    padding: 20px;
-    display: flex;
-    align-items: center;
 }
 .logo
 {
-    padding: 20px;
+    padding-left: 20px;
+    padding-top: 3px;
     display: flex;
     align-items: center;
 }
@@ -75,39 +24,20 @@ header
 {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     padding-top: 20px;
     padding-left:10px ;
     padding-right: 10px;
     min-width: 100%;
-}
-.linkbars
-{
-    padding-right: 20px;
-    min-height: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.mainlinks
-{
-    min-height:60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.bottomlinks
-{
-    min-height: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    min-height: 600px;
 }
 .Applications
 {
-    min-width: 85%;
-    min-height: 800px;
+    min-width: 860px;
+    min-height: 600px;
+    max-height: 100%;
     background-color:#ffffff;
-    border-radius:30px;
+    border-radius:20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -116,33 +46,49 @@ header
 }
 .Zayavlenie
 {
-    padding: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
     height: 110px;
     margin-bottom: 20px;
     width: 100%;
     border: 1px solid #d9d9d9;
-    border-radius:30px;
+    border-radius:15px;
     color: #646991;
     display: flex;
     flex-direction: column;
     justify-content:space-around;
+    background-color:#FFFFFF;
+    transition: 0.2s;
 }
-.Description
+.Zayavlenie:hover
+{
+    transition: 0.2s;
+    background-color:#ebebeb;
+}
+.ZayavBttn
+{
+    display: flex;
+    justify-content: space-between;
+    height: 20px;
+}
+#ClientName
+{
+    color:blue
+}
+#Status
+{
+    color:rgb(107, 189, 25);
+}
+.Date
 {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    font-size: 12px;
-}
-.number
-{   
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-    width: 100px;
-    font-size: 20px;
-    color: #000000;
-    font-weight: 300;
+    justify-content:space-around ;
+    background-color:#9ea0bb63;
+    border-radius: 10px;
+    width: 120px;
+    color:#646991;
+    align-items:center;
 }
 .mess
 {
@@ -152,13 +98,6 @@ header
     color: #000000;
     font-weight: 300;
 }
-.linkone
-{
-    display: flex;
-    flex-direction: row;
-    align-items:center;
-}
-
 ul
 {
     display: flex;
@@ -167,10 +106,9 @@ ul
 }
 .Messanger
 {
-    margin-left: 20px;
     border:1px solid #d9d9d9;
-    border-radius:30px;
-    width: 50%;
+    border-radius:20px;
+    width: 47%;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -182,8 +120,8 @@ ul
     display:flex;
     justify-content: space-between;
     flex-direction: row;
-    padding:10px 30px;
-    border-radius:30px 30px 0px 0px;
+    padding:10px 10px;
+    border-radius:20px 20px 0px 0px;
     border-bottom: 1px solid #d9d9d9;
     width: 100%;
     position: relative;
@@ -192,19 +130,20 @@ ul
 }
 .MessTitle
 {
-    margin-left: 140px;
+    margin-left: 20%;
+    font-weight:300 ;
 }
 .ChangeMess
 {
     width: 300px;
-    height: 400px;
+    height: 350px;
     border:1px solid #d9d9d9;
     border-radius:10px;
     position: absolute;
     z-index: 9999;
     text-align: left;
     background-color:#ffffff;
-    right: 50px;
+    right: 30px;
     top:40px; 
     padding: 0px 20px;
 }
@@ -215,6 +154,27 @@ ul
     flex-direction: column;
     justify-content: space-around;
     height: 100%;
+    font-weight:300 ;
+}
+.RefreshBttn
+{
+    height: 30px;
+    width: 70px;
+    background-color:rgb(215, 241, 232);
+}
+.RefreshBttn:hover
+{
+    background-color:rgb(194, 218, 209);
+}
+.FinnishBttn
+{
+    height: 30px;
+    width: 70px;
+    background-color:#f1d7d7;
+}
+.FinnishBttn:hover
+{
+    background-color:#dbc2c2;
 }
 b>p
 {
@@ -226,17 +186,7 @@ input
     border-radius:10px;
     height: 30px;
 }
-button
-{
-    width: 100px;
-    height: 30px;
-    border-radius: 10px;
-    border: solid 1px #d9d9d9; 
-}
-button:hover
-{
-    background-color: #ddd;
-}
+
 select
 {
     width: 100px;
@@ -251,29 +201,30 @@ select
 }
 .SotrudWriteBar
 {
-    min-height: 75px;
-    border-radius:0px 0px 30px 30px;
+    min-height: 65px;
+    padding:0px 10px 0px 10px ;
+    border-radius:0px 0px 20px 20px;
     background-color:#FFFFFF;
-    padding-right: 20px;
-    padding-left: 20px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items:center;
     flex-direction: row;
 }
 .typetext
 {
-    max-height: 50px;
-    min-width: 70%;
+    max-height: 40px;
+    max-width: 250px;
     border-radius:10px;
     font-family: Inter;
-    padding: 15px;
+    font-size: 12px;
+    padding-top: 10px;
+    padding-left: 10px;
     border:1px solid #d9d9d9;
 }
 .send
 {
-    width: 100px;
-    height: 40px;
+    width: 80px;
+    height: 30px;
     border-radius:20px;
     border-radius: 10px;
     border: solid 1px #d9d9d9;
