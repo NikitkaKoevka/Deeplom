@@ -12,25 +12,26 @@
     <title>Вход</title>
 </head>
 <body>
+  <form  id="Entry" method="post">
     <div class="container">
-
+      
           <div class="Email">
             <label  for="email">E-mail:</label>
-            <input id="email" type="text" class="email">
+            <input name="email" type="text" class="email">
           </div>
           <div class="Theme">
-            <label  for="theme">Пароль:</label>
-            <input id="theme" type="password" class="theme">
+            <label  for="password">Пароль:</label>
+            <input name="password" type="password" class="theme">
           </div>
           
           <div class="LinkBtn">
-            <button onclick="window.location.href='../ЛК Клиента/ЛК1.html'" id="description" class="LogIn">войти в личный кабинет</button>
+            <button onclick=logInForm() id="description" class="LogIn">войти в личный кабинет</button>
           </div>
-  
-  
-        </div>
-      
+          <p class="registr">Нет личного кабинета?<a class="Zareg" href="Страница регистрации.html">Зарегистрируйтесь</a></p>
   
     </div>
+      
+      </form>
+      <script src="scripts.js"></script>
 </body>
 </html>

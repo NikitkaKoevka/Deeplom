@@ -31,6 +31,14 @@ ul
     min-width: 100%;
     min-height: 600px;
 }
+.Vagner
+{
+    padding-right: 20px;
+    width: 500px;
+    height: 600px;
+    overflow:auto;
+    scrollbar-width: none;
+}
 .Applications
 {
     min-width: 860px;
@@ -67,8 +75,10 @@ ul
 }
 .ZayavBttn
 {
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items:flex-end;
     height: 20px;
 }
 #ClientName
@@ -79,7 +89,14 @@ ul
 {
     color:rgb(107, 189, 25);
 }
-.Date
+.Dates
+{
+  height: 35px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.DateCreation
 {
     display: flex;
     flex-direction: row;
@@ -90,15 +107,67 @@ ul
     color:#646991;
     align-items:center;
 }
-.mess
+.DateFinnish
 {
-    margin-top: 10px;
     display: flex;
     flex-direction: row;
-    color: #000000;
-    font-weight: 300;
+    justify-content:space-around ;
+    background-color:#b9b9b963;
+    border-radius: 10px;
+    width: 120px;
+    color:#646991;
+    align-items:center;
 }
-ul
+#messages
+{
+    display: flex;
+    flex-direction: column;
+    height: 472px;
+    overflow:auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+}
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+.datee
+{
+    text-align: right;
+    font-size: 12px;
+    margin-right: 5px;
+    margin-bottom: auto;
+    color:rgb(54, 54, 54);
+}
+.mess
+{
+    word-break: break-all;
+    white-space: pre-line;
+    max-width: 200px;
+    background-color: #9fd2ff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 7px;
+    font-weight: 300;
+    font-size: 12px;
+
+}
+.left
+{
+    background-color: #ffffff;
+    align-self: flex-start;
+}
+.right
+{
+    align-self: flex-end;
+    margin-left: auto;
+}
+.Applics
 {
     display: flex;
     flex-direction: column-reverse;
@@ -108,7 +177,7 @@ ul
 {
     border:1px solid #d9d9d9;
     border-radius:20px;
-    width: 47%;
+    width: 389px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -120,7 +189,7 @@ ul
     display:flex;
     justify-content: space-between;
     flex-direction: row;
-    padding:10px 10px;
+    padding:10px 0px;
     border-radius:20px 20px 0px 0px;
     border-bottom: 1px solid #d9d9d9;
     width: 100%;
@@ -136,7 +205,7 @@ ul
 .ChangeMess
 {
     width: 300px;
-    height: 350px;
+    height: 390px;
     border:1px solid #d9d9d9;
     border-radius:10px;
     position: absolute;
@@ -243,4 +312,25 @@ input[type="file"]
     align-items:center;
     justify-content: center;
     line-height: none;
+    margin-right: -100px;
+}
+textarea {
+    border: none;
+    overflow: auto;
+    outline: none;
+    font-size: 14px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    resize: none; /*remove the resize handle on the bottom right*/
+}
+
+#Equip
+{
+    text-align: left;
+}
+#Theme
+{
+    text-align: left;
 }

@@ -1,16 +1,21 @@
-* {margin: 0px; padding: 0px; box-sizing: border-box; font-size: 13px;}
+* {margin: 0px; padding: 0px; box-sizing: border-box; }
 html
 {
     height: 100%;
 }
 body
 {
-    background-color:#C3C4CC;
     display: flex;
     min-height: 100%;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    background-color:#C3C4CC;
+}
+.bbody
+{
+    background-color:#C3C4CC;
+    display:contents;
     font-family: Inter;
     font-weight: 300;
 
@@ -95,6 +100,17 @@ label ~ input,textarea
     font-family: Inter;
     padding: 15px;
 }
+textarea {
+    border: none;
+    overflow: auto;
+    outline: none;
+    font-size: 14px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    resize: none; /*remove the resize handle on the bottom right*/
+}
 .send
 {
     width: 92px;
@@ -118,8 +134,14 @@ label ~ input,textarea
     background-color: #FFFFFF;
     border-radius: 100%;
 }
+.avajp
+{
+    display: flex;
+    justify-content: center;
+}
 .avatarka
 {
+    
     border-radius:100%;
     width: 115px;
     height: auto;
@@ -143,16 +165,19 @@ label ~ input,textarea
 }
 .info
 {
-    position: absolute;
-    width: 170px;
-    height: 190px;
-    top:290px;
-    border-radius:20px;
+    margin: 20px;
+    min-width: 30%;
+    height: 90px;
+    top: 290px;
+    border-radius: 20px;
     padding: 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     justify-content: space-around;
     color: #323366;
+    font-size: 20px;
 }
 
 .E-mail
@@ -201,4 +226,68 @@ button:hover
     width: 287px;
     justify-content: space-around;
     flex-direction: row;
+}
+#i1
+{
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    background-color:#c6ffcb9c;
+    font-size: large;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius:20px;
+    text-align: center;
+    padding-top: 25px;
+    font-family: Inter;
+    color: rgb(26, 107, 30);
+    display: none;
+}
+#i2
+{
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    background-color:#ffc6c69c;
+    font-size: large;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius:20px;
+    text-align: center;
+    padding-top: 25px;
+    font-family: Inter;
+    color: rgb(107, 26, 26);
+    display: none;
+}
+#i3
+{
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    background-color:#ffc6c69c;
+    font-size: large;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius:20px;
+    text-align: center;
+    padding-top: 25px;
+    font-family: Inter;
+    color: rgb(107, 26, 26);
+    display: none;
+}
+#i4
+{
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    background-color:#ffc6c69c;
+    font-size: large;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius:20px;
+    text-align: center;
+    padding-top: 25px;
+    font-family: Inter;
+    color: rgb(107, 26, 26);
+    display: none;
 }

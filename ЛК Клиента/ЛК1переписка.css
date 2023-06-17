@@ -34,6 +34,53 @@ a{height: 20px;}
     border: 1px solid #d9d9d9;
     
 }
+#messages
+{
+    display: flex;
+    flex-direction: column;
+    height: 393px;
+    overflow:auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+}
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+.datee
+{
+    text-align: right;
+    font-size: 12px;
+    margin-right: 5px;
+    margin-bottom: auto;
+    color:rgb(54, 54, 54);
+}
+.mess
+{
+    word-break: break-all;
+    white-space: pre-line;
+    max-width: 400px;
+    background-color: #9fd2ff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 7px;
+
+}
+.left
+{
+    background-color: #ffffff;
+    align-self: flex-start;
+}
+.right
+{
+    align-self: flex-end;
+    margin-left: auto;
+}
 .sendmess
 {
     width: 100%;
@@ -48,6 +95,7 @@ a{height: 20px;}
 }
 .typetext
 {
+    
     margin-left: 20px;
     max-height: 50px;
     width: 70%;
@@ -55,6 +103,17 @@ a{height: 20px;}
     border-color: #d9d9d9;
     font-family: Inter;
     padding: 15px;
+}
+textarea {
+    border: none;
+    overflow: auto;
+    outline: none;
+    font-size: 14px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    resize: none; /*remove the resize handle on the bottom right*/
 }
 .send
 {
@@ -99,6 +158,11 @@ button:hover
     width: 115px;
     height: auto;
 }
+.avajp
+{
+    display: flex;
+    justify-content: center;
+}
 .profile
 {
     background-color: white;
@@ -118,14 +182,16 @@ button:hover
 }
 .info
 {
-    position: absolute;
-    width: 170px;
-    height: 190px;
-    top:290px;
-    border-radius:20px;
+    margin: 20px;
+    min-width: 30%;
+    height: 90px;
+    top: 290px;
+    border-radius: 20px;
     padding: 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     justify-content: space-around;
     color: #323366;
 }

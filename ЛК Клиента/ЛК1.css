@@ -15,27 +15,109 @@ body
     font-weight: 300;
 
 }
-
+ul
+{
+    min-width: 50%;
+    
+}
 .container
 {
     display: flex;
     flex-direction: row;
     width: 70%;
 }
-.messenger
+.Zayavlenie
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 110px;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    border-radius:15px;
+    color: #646991;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    background-color:#FFFFFF;
+    transition: 0.2s;
+}
+.Zayavlenie:hover
+{
+    transition: 0.2s;
+    background-color:#ebebeb;
+}
+.ZayavBttn
 {
     display: flex;
-    justify-content: flex-end;
-    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items:flex-end;
+    height: 20px;
+    width: 100%;
+}
+#ClientName
+{
+    color:blue
+}
+#Status
+{
+    color:rgb(107, 189, 25);
+}
+.Dates
+{
+  height: 35px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.DateCreation
+{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around ;
+    background-color:#9ea0bb63;
+    border-radius: 10px;
+    width: 180px;
+    color:#646991;
+    align-items:center;
+    height: 15px;
+}
+.DateFinnish
+{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around ;
+    background-color:#b9b9b963;
+    border-radius: 10px;
+    width: 180px;
+    color:#646991;
+    align-items:center;
+    height: 15px;
+}
+.messenger
+{
     background-color:#D5E3EF;
     width: 70%;
-    min-height: 528px;
+    height: 528px;
+    overflow:auto;
+    scrollbar-width: none;
     border-radius:30px 0px 0px 30px;
     padding: 20px;
     border: 1px solid #d9d9d9;
 }
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+.avajp
+{
+    display: flex;
+    justify-content: center;
+}
 .avatarka
 {
+    
     border-radius:100%;
     width: 115px;
     height: auto;
@@ -59,14 +141,16 @@ body
 }
 .info
 {
-    position: absolute;
-    width: 170px;
-    height: 190px;
+    margin: 20px;
+    min-width: 30%;
+    height: 90px;
     top:290px;
     border-radius:20px;
     padding: 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items:center;
+    text-align: center;
     justify-content: space-around;
     color: #323366;
 }
@@ -99,7 +183,7 @@ div >button
 }
 button:hover
 {
-    background-color:#a9c6e0;
+    background-color:#a4c1d3;
     transition:  0.2s ;
 }
 .LogOut
@@ -160,4 +244,31 @@ button:hover
     color:#6889A5;
     font-size: 13px;
     font-weight: 600;
+}
+#Equip
+{
+    text-align: left;
+}
+#Theme
+{
+    text-align: left;
+}
+
+#messages
+{
+    display: flex;
+    flex-direction: column;
+    height: 393px;
+    overflow:auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+}
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
 }

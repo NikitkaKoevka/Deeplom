@@ -25,14 +25,26 @@ body
     justify-content: center;
     align-items:center;
 }
-
+.registr
+{
+    font-size: 12px;
+    text-align: center;
+    width: 150px;
+}
+.Zareg
+{
+    text-decoration: none;
+    color: #4B7EC9;
+    font-weight: 600;
+}
 /* Подумай над шрифтом */
 .LinkBtn
 {
     width: 170px;
-    height: 60px;
+    height: 100px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items:center;
 }
 .LogIn

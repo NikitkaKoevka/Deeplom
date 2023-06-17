@@ -14,59 +14,56 @@
 </head>
 <body>
   <div class="header">
-    <h class="headertitle">Обращение в техническую поддержку</h>
+    <h1 class="headertitle">Обращение в техническую поддержку</h1>
   </div>
+ 
   <div class="container">
-
+    <form id="Entry" method="post">
       <div class="content">
-        <div  class="FullName">
+        <div class="FullName">
           <div class="Name">
-            <label  for="fname">Имя:</label>
-            <input id="fname" type="text" class="fname">
+            <label for="fname">Имя:</label>
+            <input name="fname" type="text" class="fname">
           </div>
           <div class="LName">
-            <label class="LName" for="fname">Фамилия:</label>
-            <input id="lname" type="text" class="lname">
+            <label for="lname">Фамилия:</label>
+            <input name="lname" type="text" class="lname">
           </div>
-
         </div>
         <div class="Phone">
-        <label  for="phone">Телефон:</label>
-        <input id="phone" type="text" class="phone">
+          <label for="phone">Телефон:</label>
+          <input name="phone" type="text" class="phone">
         </div>
         <div class="Email">
-          <label  for="email">E-mail:</label>
-          <input id="email" type="text" class="email">
+          <label for="email">E-mail:</label>
+          <input name="email" type="text" class="email">
         </div>
         <div class="Theme">
-          <label  for="theme">Тема обращения:</label>
-          <input id="theme" type="text" class="theme">
+          <label for="theme">Тема обращения:</label>
+          <input name="theme" type="text" class="theme">
         </div>
         <div class="Equip">
-          <label  for="equip">Оборудование:</label>
-          <input id="equip" type="text" class="equip">
+          <label for="equip">Оборудование:</label>
+          <input name="equip" type="text" class="equip">
         </div>
         <div class="Descrip">
-          <label  for="description">Описание обращения:</label>
-          <textarea id="description" type="textarea" class="description"></textarea>
+          <label for="content">Описание обращения:</label>
+          <textarea name="content" class="description"></textarea>
         </div>
 
         <div class="BtnSend">
-          <input id="send" type="button" class="send" value="Подать заявление">
+          <button id="send" class="send" onclick="submitForm()">Подать заявление</button>
         </div>
+      
         <div class="footerPlaq">
           <p class="registr">Нет личного кабинета?<a class="Zareg" href="Страница регистрации.html">Зарегистрируйтесь</a></p>
           <div class="LinkBtn">
-            <button onclick="window.location.href='Страница входа.html'" id="description" class="LogIn">войти в личный кабинет</button>
+              <a class="LogIn" href="Страница входа.html">войти в личный кабинет</a>   
           </div>
         </div>
-
-
-
       </div>
-    
-
+    </form>
   </div>
+  <script src="scripts.js"></script>
 </body>
 </html>
- 

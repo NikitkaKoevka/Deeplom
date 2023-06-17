@@ -12,39 +12,37 @@
     <title>Регистрация</title>
 </head>
 <body>
+  <form id="Entry" action="registration.php" method="post">
     <div class="container">
+     
           <div  class="FullName">
             <div class="Name">
               <label  for="fname">Имя:</label>
-              <input id="fname" type="text" class="fname">
+              <input name="fname" type="text" class="fname">
             </div>
             <div class="LName">
               <label class="LName" for="fname">Фамилия:</label>
-              <input id="lname" type="text" class="lname">
+              <input name="lname" type="text" class="lname">
             </div>
-
           </div>
           <div class="Phone">
           <label  for="phone">Телефон:</label>
-          <input id="phone" type="text" class="phone">
+          <input name="phone" type="text" class="phone">
           </div>
           <div class="Email">
             <label  for="email">E-mail:</label>
-            <input id="email" type="text" class="email">
+            <input name="email" type="text" class="email">
           </div>
           <div class="Theme">
-            <label  for="theme">Пароль:</label>
-            <input id="theme" type="password" class="theme">
+            <label  for="password">Пароль:</label>
+            <input name="password" type="password" class="theme">
           </div>
           <div class="LinkBtn">
-            <button onclick="window.location.href='../ЛК Клиента/ЛК1.html'" id="description" class="LogIn">Зарегистрироваться</button>
+            <button  id="description" class="LogIn">Зарегистрироваться</button>
           </div>
-        
-  
-  
-        </div>
-      
-  
+          <p class="GotLK">Есть личный кабинет?<a class="Login" href="Страница входа.html">Войти</a></p>
     </div>
+      </form>
+    <script src="scripts.js"></script>
 </body>
 </html>

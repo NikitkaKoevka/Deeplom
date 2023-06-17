@@ -13,24 +13,45 @@
     <link rel="stylesheet" href="BttnLinks.css">
     <link rel="stylesheet" href="body.css">
     <title>Настройки</title>
+    <?php
+    session_start();
+    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== 3) {
+        // если пользователь не вошел в систему, перенаправляем на страницу логина
+        session_destroy();
+        header("Location: ../Вход/Страница входа.html");
+        exit();
+    }
+    $idd = $_COOKIE['ID'];
+    $servername = "127.0.0.1";
+    $username = "root";
+    $password = "";
+    $dbname = "istok";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    $query = "SELECT * FROM user WHERE  ID = $idd ";
+    $result = $conn->query($query);
+    $roww=$result->fetch_array();
+    $fname=$roww['name'];
+    $lname=$roww['lastname'];
+    ?>
 </head>
 <body>
     <header>
         <div class="HeaderComplete">
             <div class="logo">
-                <a href="Заявки.html">
+                <a href="Заявки.html.php">
                 <img src="../icons/ISTOK.svg" class="ISTOK" alt="ISTOK">
                 </a>
             </div>
             <div class="SotrudInfo">
                 <div class="SI1">
                     <p class="FLName">
-                        Никита Конев
+                    <?php echo $fname; ?><?php echo ' '; ?><?php echo $lname; ?>
                     </p >
                     <a href="../Вход/Страница входа.html" class="LogOut">Выход</a>
                 </div>
                 <div class="SI2">
-                    <img src="../icons/IMG_3675.JPG" alt="Ava" class="Ava">
+                    <img src="<?php echo $_SESSION['photo'];?>" alt="ava" class="Ava">
                 </div>
             </div>
         </div>
@@ -41,28 +62,28 @@
             <div class="mainlinks">
                 <div class="linkone">
                     <img src="../icons/branchicons/заявка.svg" alt="icon">
-                    <a class="HrefLink"href="Заявки.html">Заявки</a >
+                    <a class="HrefLink"href="Заявки.html.php">Заявки</a >
                 </div>
                 <div class="linkone">
                     <img src="../icons/branchicons/клиент.svg" alt="icon">
-                    <a class="HrefLink"href="Клиенты.html">Клиенты</a >
+                    <a class="HrefLink"href="Клиенты.html.php">Клиенты</a >
                 </div>
                 
                 <div class="linkone">
                     <img src="../icons/branchicons/оборудование.svg" alt="icon">
-                    <a class="HrefLink"href="Оборудование.html">Оборудование</a >
+                    <a class="HrefLink"href="Оборудование.html.php">Оборудование</a >
                 </div>
                 <div class="linkone">
                     <img src="../icons/branchicons/сотрудник.svg" alt="icon">
-                    <a class="HrefLink"href="Сотрудники.html">Сотрудники</a >
+                    <a class="HrefLink"href="Сотрудники.html.php">Сотрудники</a >
                 </div>
                 <div class="linkone">
                     <img src="../icons/branchicons/дешборд.svg" alt="icon">
-                    <a class="HrefLink"href="Дэшборд.html">Дэшборд</a >
+                    <a class="HrefLink"href="Дэшборд.html.php">Дэшборд</a >
                 </div>
                 <div class="linkone">
                     <img src="../icons/branchicons/база знаниц.svg" alt="icon">
-                    <a class="HrefLink"href="База знаний.html">База знаний</a >
+                    <a class="HrefLink"href="База знаний.html.php">База знаний</a >
                 </div>
             </div>
             <div class="bottomlinks">
@@ -72,7 +93,7 @@
                 </div>
                 <div class="linkone">
                     <img src="../icons/branchicons/шестеренка.svg" alt="icon">
-                    <a class="HrefLink"href="Настройки.html">Настройки</a >
+                    <a class="HrefLink"href="Настройки.html.php">Настройки</a >
                 </div>
             </div>
         </div>
@@ -83,14 +104,16 @@
                     <li>
                         <label for="ViewMode">Режим по умолчанию при просмотре заявления</label>
                         <select name="Mode" id="ViewMode" class="Selection">
-                            <option value="None">Не использовать режимы</option>
-                            <option value="InProcess">В процессе</option>
+                            <option value="None"></option>
+                            <option value="InProcess">Обработка</option>
                         </select>
+                        <button class="SettingsBttn">Обновить</button>
                     </li>
                     <li>
                         <label for="SizeVal">Максимальный размер загружаемых файлов</label>
                         <input type="numder" id="SizeVal">
                         МБ
+                        <button class="SettingsBttn">Обновить</button>
                     </li>
                     <li>
                         <label for="Close">Значение по умолчанию для поля “закрыть при отсутствии ответа через”</label>
@@ -106,6 +129,7 @@
                             <option value="1D">1 день</option>
                             <option value="2D">2 дня</option>
                         </select>
+                        <button class="SettingsBttn">Обновить</button>
                     </li>
                 </ul>
             </div>
@@ -121,20 +145,6 @@
             <div class="Rights">
                 <p>Права доступа пользователей:</p>
                 <div class="Blocks">
-                    <div class="Block1">
-                        <label for="Users">Клиенты:</label>
-                        <div class="SubBlock1">
-                            <select name="UserList" id="Users"class="Selection">
-                                <option value=""></option>
-                            </select>
-                            <select name="AccessLvl" id="Lvl"class="Selection">
-                                <option value="Client">Клиент</option>
-                                <option value="Sotrud">Сотрудник</option>
-                                <option value="Admin">Админ</option>
-                            </select>
-                            <button class="SettingsBttn">Обновить</button>
-                        </div>
-                    </div>
                     <div class="Block2">
                         <label for="Users">Сотрудники:</label>
                         <div class="SubBlock2">
