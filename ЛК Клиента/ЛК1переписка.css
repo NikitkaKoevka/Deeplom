@@ -60,17 +60,23 @@ a{height: 20px;}
     margin-bottom: auto;
     color:rgb(54, 54, 54);
 }
+.messPhoto
+{
+    width:250px;
+    height:auto ;
+}
 .mess
 {
     word-break: break-all;
     white-space: pre-line;
-    max-width: 400px;
+    max-width: 300px;
     background-color: #9fd2ff;
     border-radius: 10px;
     margin-bottom: 10px;
     padding: 7px;
 
 }
+
 .left
 {
     background-color: #ffffff;
@@ -117,20 +123,29 @@ textarea {
 }
 .send
 {
-    width: 92px;
+    width: 31px;
     height: 31px;
-    background-color:#D9D9D9;
-    color:#525252;
-    border-radius:20px;
+    background:none;
     border:none;
-    font-weight: 600;
-    font-size: 12px;
     transition:  0.2s ;
 }
+#contextMenu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius:10px;
+    padding: 5px;
+    z-index: 1000;
+  }
+  
 button:hover
 {
-    background-color:#c0c0c0;
     transition:  0.2s ;
+}
+.sendpic
+{
+    width: 40px;
 }
 .messheader
 {
@@ -286,4 +301,11 @@ input[type="file"] {
 .paperclip
 {
     width: 15px;
+}
+.delete {
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+    background: none;
+    border: none;
 }

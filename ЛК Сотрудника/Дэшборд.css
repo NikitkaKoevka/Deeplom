@@ -27,6 +27,7 @@ li
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     padding: 20px;
 }
 .number
@@ -52,24 +53,22 @@ li
 {
     height: 350px;
     width: 320px;
-    border:1px solid #d9d9d9;
     border-radius: 30px;
 }
 .DiagOcenok
 {
     height: 350px;
     width: 320px;
-    border:1px solid #d9d9d9;
     border-radius: 30px;
 }
 .DiagLid
 {
-    height: 100px;
-    width: 600px;
-    border:1px solid #d9d9d9;
+    height: 200px;
+    width:auto;
     border-radius: 30px;
     margin-left: 40px;
     margin-right: 40px;
+
 }
 .DiagRow
 {
@@ -86,4 +85,12 @@ li
     font-size: large;
     font-weight: 900;
     color: rgb(79, 108, 202);
+}
+.diagrammTitle
+{
+    width: auto;
+    text-align: center;
+    color: rgb(255, 0, 191);
+    font-weight: 800;
+    font-family: Stolzl;
 }

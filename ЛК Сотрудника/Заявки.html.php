@@ -17,13 +17,13 @@
     <title>Заявки</title>
     <?php
     session_start();
-    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== 3) {
+    if (!isset($_SESSION['logged_in']) || ($_SESSION['logged_in'] !== 3 && $_SESSION['logged_in'] !== 2)) {
         // если пользователь не вошел в систему, перенаправляем на страницу логина
         session_destroy();
         header("Location: ../Вход/Страница входа.html");
         exit();
-    }
-    $idd = $_COOKIE['ID'];
+    }    
+    $idd = $_SESSION['UserID'];
 
     $servername = "127.0.0.1";
     $username = "root";
@@ -36,6 +36,8 @@
     $roww=$result->fetch_array();
     $fname=$roww['name'];
     $lname=$roww['lastname'];
+    $photo= $roww['photolink'];
+
     ?>
 </head>
 <body>
@@ -51,10 +53,10 @@
                     <p class="FLName">
                     <?php echo $fname; ?><?php echo ' '; ?><?php echo $lname; ?>
                     </p >
-                    <a href="../Вход/Страница входа.html" class="LogOut">Выход</a>
+                    <a href="../Вход/LogOut.php" class="LogOut">Выход</a>
                 </div>
                 <div class="SI2">
-                    <img src="<?php echo $_SESSION['photo'];?>" alt="ava" class="Ava">
+                    <img src="<?php echo $photo;?>" alt="ava" class="Ava">
                 </div>
             </div>
         </div>
@@ -94,13 +96,20 @@
                     <img src="../icons/branchicons/поддержка.svg" alt="icon">
                     <p class="HrefLink" onclick="SupportAlert()">Поддержка</p >
                 </div>
+                <!--
                 <div class="linkone">
                     <img src="../icons/branchicons/шестеренка.svg" alt="icon">
                     <a class="HrefLink"href="Настройки.html.php">Настройки</a >
                 </div>
+                -->
             </div>
         </div>
         <div class="Applications" >
+            <div id='contextMenu'>
+                <button id='deleteMessage' class='delete' onclick="deleteMessage()">
+                    <img src='../icons/Delete.svg' width='10px' alt='?'>
+                </button>
+            </div>
             <div class="Vagner"id="requests">
                 <?php 
                 $servername = "127.0.0.1";
@@ -109,9 +118,9 @@
                 $dbname = "istok";
                 
                 $conn = new mysqli($servername, $username, $password, $dbname);
-                $userId=$_COOKIE["ID"];
-
-                $query = "SELECT * FROM request WHERE  Request_response = $userId AND (Request_status!='Завершено' OR Request_status IS NULL) ORDER BY CreationDate DESC";
+                
+             
+                $query = "SELECT * FROM request WHERE  Request_response = $idd AND (Request_status!='Завершено' OR Request_status IS NULL) ORDER BY CreationDate DESC";
                 $result = $conn->query($query);
                 foreach ($result->fetch_all(MYSQLI_ASSOC) as $заявление) {
                     
@@ -119,34 +128,30 @@
                     $result1 = $conn->query($query);
                     $row1=$result1->fetch_array();
 
-                    ?>
-                <form class="form-get">
-                    <input class="idd" type="hidden" value="<?php echo $заявление['ID']; ?>">
-                    <button id="buton" type="submit" class="Zayavlenie">
-                            <p id="Equip" style="color:#33c833;"><?php echo $заявление['Request_equip']; ?></p>
-                            <p id="Theme"><?php echo $заявление['Request_theme']; ?></p>
-                            <div class="ZayavBttn">
-                                <p  id="number">№ <?php echo $заявление['ID']; ?></p>
-                                <p id="ClientName"><?php echo $row1['name']; ?></p>
-                                <p id="Status"><?php echo $заявление['Request_status']; ?></p>
-                                <div class="Dates">
-                                    <div class="DateCreation">
-                                        <p id="Chislo"><?php echo date('d.m.Y H:i:s', strtotime($заявление['CreationDate'])); ?></p>
-                                    </div>
-                                    <div class="DateFinnish">
-                                        <p id="Chislo"><?php echo $заявление['FinnishDate']; ?></p>
-                                    </div>
-                                </div>
 
-                            </div>
 
-                        
-                    </button>
-                </form>
-                <?php } ?>
-                <?php
+                    echo "<button id=\"buton\" class=\"Zayavlenie\" onclick=\"OpenReq('{$заявление['ID']}')\">";
+                    echo "<input class=\"idd\" type=\"hidden\" value=\"{$заявление['ID']}\">";                  
+                    echo "<p id=\"Equip\" style=\"color:#33c833;\">{$заявление['Request_equip']}</p>";
+                    echo "<p id=\"Theme\">{$заявление['Request_theme']}</p>";
+                    echo "<div class=\"ZayavBttn\">";
+                    echo "<p id=\"number\">№ {$заявление['ID']}</p>";
+                    echo "<p id=\"ClientName\">{$row1['name']}</p>";
+                    echo "<p id=\"Status\">{$заявление['Request_status']}</p>";
+                    echo "<div class=\"Dates\">";
+                    echo "<div class=\"DateCreation\">";
+                    echo "<p id=\"Chislo\">".$заявление['CreationDate']."</p>";
+                    echo "</div>";
+                    echo "<div class=\"DateFinnish\">";
+                    echo "<p id=\"Chislo\">".$заявление['FinnishDate']."</p>";
+                    echo "</div>";
+                    echo "</div>";
+                    echo "</div>";
+                    echo "</button>";
 
-                
+                    } 
+
+                    
                 $query = "SELECT * FROM request WHERE  Request_response IS NULL  ORDER BY CreationDate DESC";
                 $result = $conn->query($query);
                 foreach ($result->fetch_all(MYSQLI_ASSOC) as $заявление) {
@@ -154,38 +159,35 @@
                     $query = "SELECT * FROM user WHERE ID= '$заявление[Request_owner]'";
                     $result1 = $conn->query($query);
                     $row1=$result1->fetch_array();
-                    
 
 
+
+                    echo "<button id=\"buton\" class=\"Zayavlenie\" onclick=\"OpenReq('{$заявление['ID']}')\">";
+                    echo "<input class=\"idd\" type=\"hidden\" value=\"{$заявление['ID']}\">";                  
+                    echo "<p id=\"Equip\" style=\"color:#ff6000;\">{$заявление['Request_equip']}</p>";
+                    echo "<p id=\"Theme\">{$заявление['Request_theme']}</p>";
+                    echo "<div class=\"ZayavBttn\">";
+                    echo "<p id=\"number\">№ {$заявление['ID']}</p>";
+                    echo "<p id=\"ClientName\">{$row1['name']}</p>";
+                    echo "<p id=\"Status\">{$заявление['Request_status']}</p>";
+                    echo "<div class=\"Dates\">";
+                    echo "<div class=\"DateCreation\">";
+                    echo "<p id=\"Chislo\">".date('d.m.Y H:i:s', strtotime($заявление['CreationDate']))."</p>";
+                    echo "</div>";
+                    echo "<div class=\"DateFinnish\">";
+                    echo "<p id=\"Chislo\">{$заявление['FinnishDate']}</p>";
+                    echo "</div>";
+                    echo "</div>";
+                    echo "</div>";
+                    echo "</button>";
+
+                    } 
+                
+                
                     ?>
-                <form class="form-get" >
-                    <input class="idd" type="hidden"  value="<?php echo $заявление['ID']; ?>">    
-                    <button id="buton" type="submit" class="Zayavlenie">
-                            <p id="Equip"style="color:#ff6000;"><?php echo $заявление['Request_equip']; ?></p>
-                            <p id="Theme"><?php echo $заявление['Request_theme']; ?></p>
-                            <div class="ZayavBttn">
-                                <p  id="number">№ <?php echo $заявление['ID']; ?></p>
-                                <p id="ClientName"><?php echo $row1['name']; ?></p>
-                                <p id="Status"><?php echo $заявление['Request_status']; ?></p>
-                                <div class="Dates">
-                                    <div class="DateCreation">
-                                        <p id="Chislo"><?php echo date('d.m.Y H:i:s', strtotime($заявление['CreationDate'])); ?></p>
-                                    </div>
-                                    <div class="DateFinnish">
-                                        <p id="Chislo"><?php echo $заявление['FinnishDate']; ?></p>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        
-                    </button>
-                </form>
-                <?php } ?>
             </div>
             <div class="Messanger" id="vou">
-              
-               
+
             </div>
         </div>
     </div>

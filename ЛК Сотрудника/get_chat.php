@@ -1,5 +1,6 @@
 <?php
 // Подключение к базе данных
+session_start();
 $servername = "127.0.0.1";
 $username = "root";
 $password = "";
@@ -14,7 +15,7 @@ $sql2 = "SELECT COUNT(*) FROM messages WHERE conversation_id = '$id'";
 
 $result2 = $conn->query($sql2);
 $row2 = $result2->fetch_array();
-$idd = $_COOKIE['ID'];
+$idd = $_SESSION['UserID'];
 
 
 if ($row2[0]>0)
@@ -28,7 +29,7 @@ if ($row2[0]>0)
     $query2 = "SELECT * FROM user WHERE ID= '$row3[Request_owner]'";
     $result4 = $conn->query($query2);
     $row4=$result4->fetch_array();
-
+    $sorti = $row4['ID'];// эта переменная нужна для страницы с отсортированным по пользователю
 
     $query3 = "SELECT ID, name, lastname FROM user WHERE usertype>1";
     $result5 = $conn->query($query3);
@@ -52,6 +53,7 @@ if ($row2[0]>0)
         <img width='20px' height='20px' src='../icons/ThreeDots.svg' alt='...'>
     </div>
     <form id='update'>
+    <input id='sorti' type='hidden' value='".$sorti."'> 
     <div id='plaque' class='ChangeMess'>
         <ul class='ChangeList'>
             <li>
@@ -86,7 +88,6 @@ if ($row2[0]>0)
                 <label for='Statusi'>Статус заявления:</label>
                 <select name='TypeOfStatus' id='Statusi' required>
                 <option selected='selected' value='". $row3['Request_status']."'>".$row3['Request_status']."</option>
-                    <option value='Обработка'>Обработка</option>
                     <option value='В процессе'>В процессе</option>
                     <option value='Завершено'>Завершено</option>
                 </select>
@@ -94,7 +95,7 @@ if ($row2[0]>0)
             <li>
                 <label for='Statusi'>Время обработки:</label>
                 <select name='TimeOfProcessing' id='Processing' required>
-                <option selected='selected' value='". $row3['PlanDate']."'>".$row3['PlaneDate']."</option>
+                <option selected='selected' value='". $row3['PlanDate']."'>".$row3['PlanDate']."</option>
                     <option value='10 минут'>10 минут</option>
                     <option value='20 минут'>20 минут</option>
                     <option value='30 минут'>30 минут</option>
@@ -123,24 +124,33 @@ if ($row2[0]>0)
     
     if($row1['sender_id']==$idd)
     {
-        echo "<div class='mess right'>".$row1['message_text']."<div class='datee'>".date('H:i', strtotime($row1['timestamp']))."</div></div>";
+        if($row1['type']==1)
+        echo "<div class='mess right' oncontextmenu='showContextMenu(event, ".$row1['ID'].")'><img class='messPhoto' src='..".$row1['message_text']."' alt='photo'><div class='datee'>".date('H:i', strtotime($row1['timestamp']))."</div></div>";
+        else
+        echo "<div class='mess right' oncontextmenu='showContextMenu(event, ".$row1['ID'].")'>".$row1['message_text']."<div class='datee'>".date('H:i', strtotime($row1['timestamp']))."</div></div>";
     }
     else
     {
-        echo "<div class='mess left '>".$row1['message_text']."<div class='datee'>".date('H:i', strtotime($row1['timestamp']))."</div></div>";
-    }
+        if($row1['type']==1)
+        echo "<div class='mess left' ><img class='messPhoto' src='..".$row1['message_text']."' alt='photo'><div class='datee'>".date('H:i', strtotime($row1['timestamp']))."</div></div>";
+        else
+        echo "<div class='mess left' >".$row1['message_text']."<div class='datee'>".date('H:i', strtotime($row1['timestamp']))."</div></div>";
+     }
 
     }
     echo "</div>";
     echo "
-    <form id='chat-form' >
+    <form id='chat-form' enctype='multipart/form-data'>
                     <div class='SotrudWriteBar'>
                         <textarea name='messagebox' id='chat-message' cols='30' rows='10' class='typetext' placeholder='Напишите сообщение'></textarea>
-                        <label for='paperclip'>
-                            <img src='../icons/скрепка.svg' alt='p' class='paperclip' >
-                        </label>
-                        <input id='paperclip' type='file' class='prikrepit'>
-                        <button class='send'>Отправить</button>
+                        <div style = 'display:flex; justify-content:space-around; align-items:center; width:90px '>
+                            <label for='paperclip'>
+                                <img src='../icons/скрепка.svg' alt='p' class='paperclip' >
+                            </label>
+                            <input accept='image/jpeg, image/png' id='paperclip' type='file' class='prikrepit'>
+                            <button class='send'><img src='../icons/Send.svg' alt='p' class='sendpic' ></button>
+                        </div>
+                        
                     </div>
                 </form>
     
@@ -217,7 +227,6 @@ else
                 <label for='Statusi'>Статус заявления:</label>
                 <select name='TypeOfStatus' id='Statusi' required>
                 <option selected='selected' value='". $row3['Request_status']."'>".$row3['Request_status']."</option>
-                    <option value='Обработка'>Обработка</option>
                     <option value='В процессе'>В процессе</option>
                     <option value='Завершено'>Завершено</option>
                 </select>
@@ -254,24 +263,26 @@ else
     
     if($row1['sender_id']==$idd)
     {
-        echo "<div class='mess right'>".$row1['message_text']."<div class='datee'>".date('H:i', strtotime($row1['timestamp']))."</div></div>";
+        echo "<div class='mess right' oncontextmenu='showContextMenu(event, ".$row1['ID'].")'>".$row1['message_text']."<div class='datee'>".date('H:i', strtotime($row1['timestamp']))."</div></div>";
+
     }
     else
     {
-        echo "<div class='mess left '>".$row1['message_text']."<div class='datee'>".date('H:i', strtotime($row1['timestamp']))."</div></div>";
+        echo "<div class='mess left'>".$row1['message_text']."<div class='datee'>".date('H:i', strtotime($row1['timestamp']))."</div></div>";
+
     }
 
     }
     echo "</div>";
     echo "
-    <form id='chat-form' >
+    <form id='chat-form' enctype='multipart/form-data'>
                     <div class='SotrudWriteBar'>
                         <textarea name='messagebox' id='chat-message' cols='30' rows='10' class='typetext' placeholder='Напишите сообщение'></textarea>
                         <label for='paperclip'>
                             <img src='../icons/скрепка.svg' alt='p' class='paperclip' >
                         </label>
-                        <input id='paperclip' type='file' class='prikrepit'>
-                        <button class='send'>Отправить</button>
+                        <input id='paperclip' type='file' class='prikrepit' accept='image/png, image/jpeg'>
+                        <button class='send'><img src='../icons/Send.svg' alt='p' class='paperclip' ></button>
                     </div>
                 </form>
     

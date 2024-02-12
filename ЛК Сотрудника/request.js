@@ -37,14 +37,7 @@ $(document).ready(function() {
     
   });
    
-      $('.form-get').submit(function(event) {
-        event.preventDefault();
-        var message = $(this).find('.idd').val();
-         getChat(message);
-         setInterval(function() {
-          getMessages();
-         }, 5000);
-        });
+
 
         setInterval(function() {
           UpdatePage();
@@ -54,6 +47,16 @@ $(document).ready(function() {
 
    });
    
+   function OpenReq(idChat)
+   {
+     console.log(idChat);
+     getChat(idChat);
+     setInterval(function() {
+       getMessages();
+      }, 5000);
+
+   }
+
    function getMessages() {
     $.ajax({
      url: 'get_messages.php',
@@ -74,6 +77,48 @@ $(document).ready(function() {
       success: function(data) {
         
         $('#vou').html(data);
+//--------------------------------------------------------------------------------------------------------
+//Ниже код для прикрепления фотки в переписку
+
+        var labelElement = document.getElementById('paperclip');
+
+        if (labelElement) {
+            labelElement.addEventListener('change', function() 
+            {
+                console.log('1');
+                
+                var fileInput = document.getElementById('paperclip');
+                console.log(fileInput);
+                // Проверяем, выбран ли файл
+                if (fileInput.files.length > 0) {
+                    var file = fileInput.files[0];
+                    var formData = new FormData();
+                    formData.append('doc', file);
+          
+                    // Отправляем файл на сервер с использованием AJAX
+                    $.ajax({
+                        url: 'send_file.php', // Путь к вашему PHP-обработчику
+                        type: 'POST',
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function(response) {
+                            console.log(response);
+                        },
+                        error: function(error) {
+                            console.error('Ошибка при загрузке файла: ' + error);
+                        }
+                    });
+                } else {
+                    console.log('Выберите файл для загрузки.');
+                }
+
+
+            });
+        }
+//--------------------------------------------------------------------------------------------------------
+
+
         setTimeout(()=>{ scrollToBottom();},200);
        
       }
@@ -130,3 +175,4 @@ $(document).ready(function() {
         // Перемещаем курсор на новую строку
         textarea.selectionStart = textarea.selectionEnd = currentPosition + 1;
       }
+

@@ -12,17 +12,17 @@
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="BttnLinks.css">
     <link rel="stylesheet" href="body.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Оборудование</title>
     <?php
     session_start();
-    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== 3) {
+    if (!isset($_SESSION['logged_in']) || ($_SESSION['logged_in'] !== 3 && $_SESSION['logged_in'] !== 2)) {
         // если пользователь не вошел в систему, перенаправляем на страницу логина
         session_destroy();
         header("Location: ../Вход/Страница входа.html");
         exit();
-    }
-    $idd = $_COOKIE['ID'];
-
+    }   
+    $idd = $_SESSION['UserID'];
     $servername = "127.0.0.1";
     $username = "root";
     $password = "";
@@ -34,6 +34,7 @@
     $roww=$result->fetch_array();
     $fname=$roww['name'];
     $lname=$roww['lastname'];
+    $photo= $roww['photolink'];
     ?>
 </head>
 <body>
@@ -49,10 +50,10 @@
                     <p class="FLName">
                     <?php echo $fname; ?><?php echo ' '; ?><?php echo $lname; ?>
                     </p >
-                    <a href="../Вход/Страница входа.html" class="LogOut">Выход</a>
+                    <a href="../Вход/LogOut.php" class="LogOut">Выход</a>
                 </div>
                 <div class="SI2">
-                    <img src="<?php echo $_SESSION['photo'];?>" alt="ava" class="Ava">
+                    <img src="<?php echo $photo;?>" alt="ava" class="Ava">
                 </div>
             </div>
         </div>
@@ -92,51 +93,126 @@
                     <img src="../icons/branchicons/поддержка.svg" alt="icon">
                     <p class="HrefLink" onclick="SupportAlert()">Поддержка</p >
                 </div>
+                <!--
                 <div class="linkone">
                     <img src="../icons/branchicons/шестеренка.svg" alt="icon">
                     <a class="HrefLink"href="Настройки.html.php">Настройки</a >
                 </div>
+                -->
             </div>
         </div>
         <div class="Equipment">
+        <?php
+                $query = "SELECT * FROM equipment ";
+                $result = $conn->query($query);
+                $count = mysqli_num_rows($result);
+        ?>
             <div class="EqHeader">
                 <div class="EquipmentTitle">
                     <p>Все оборудование</p>
-                    <p id="AllEquip">3</p>
+                    <p id="All"><?php echo $count;?></p>
                 </div>
                 <div class="Search">
-                    <input type="search" class="SearchInput" placeholder="Поиск оборудования">
-                    <button class="SearchBttn">
+                    <input type="search" id="searchInput" name="searchInput" class="SearchInput" placeholder="Поиск оборудования">
+                    <button class="SearchBttn" onclick="searchFunc('Equip')">
                         <img src="../icons/Search.svg" width="10px" alt="?">
                     </button>
                 </div>
+                <?php
+                        if($_SESSION['logged_in']==3)
+                echo '<button class="addBttm" onclick="addEquip()"><img src="../icons/add.svg" width="5px" alt="?"></button>'
+                ?>
             </div>
-           <ul class="EquipList">
-            <li class="NEquip">
-                <ul class="EquipInfo">
-                    <li id="7354">#7354: <b>Осциллограф 5М2827</b></li>
-                    <li id="SerialN">Серийный номер: 234545724154</li>
-                    <li id="Otdel">Отдел: НПК-20</li>
-                </ul>
-                <button>Техническая документация</button>
-            </li>
-            <li class="NEquip">
-                <ul class="EquipInfo">
-                    <li id="8351">#8351: <b>Сетевой коммутатор IS-Net-1</b></li>
-                    <li id="SerialN">Серийный номер: 863237086135</li>
-                    <li id="Otdel">Отдел: НПК-9</li>
-                </ul>
-                <button>Техническая документация</button>
-            </li>
-            <li class="NEquip">
-                <ul class="EquipInfo">
-                    <li id="1239">#1239: <b>ПК IS-PC-mini</b></li>
-                    <li id="SerialN">Серийный номер: 007821444321</li>
-                    <li id="Otdel">Отдел: ОАСУ</li>
-                </ul>
-                <button>Техническая документация</button>
-            </li>
-           </ul>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <div class="AddEquipHeader">
+                        <h2 class="AddEquipTitle">Добавить новое оборудование</h2>
+                        <span class="close" onclick="closeModal()">&times;</span>
+                    </div>
+                    <form id="EquipForm" >
+                        <div class="EquipDetails">
+                            <div class="NameDiv">
+                                <label for="name">Название</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <!--<div class="SerialDiv">
+                                <label for="serial">Серийный номер:</label>
+                                <input type="text" id="serial" name="serial" required>
+                            </div>
+                            <div class="DepartDiv">
+                                <label for="depart">Отдел:</label>
+                                <input type="text" id="depart" name="depart" required>
+                            </div>-->
+                            <div class="DovDiv">
+                                <label for="doc">Файл:</label>
+                                <input accept="application/pdf" type="file" id="doc" name="doc" required>
+                            </div>
+                        </div>
+                        <button class='bttnAddNewEquip' type='button' onclick="addNewEquip('Create')">Создать</button>
+                        <!--<input class='bttnAddNewEquip' type="submit" id="Create" >-->
+                    </form>
+                    <div id="result"></div>
+                </div>
+            </div>
+            <div id="myModal2" class="modal2">
+            <div class="modal-content">
+                    <div class="AddEquipHeader">
+                        <h2 class="AddEquipTitle">Изменить оборудование</h2>
+                        <span class="close" onclick="closeModal2()">&times;</span>
+                    </div>
+                    <form id="EquipForm">
+                        <div class="EquipDetails">
+                            <div class="NameDiv">
+                                <label for="name1">Название</label>
+                                <input type="text" id="name1" name="name" required>
+                            </div>
+                            <!--<div class="SerialDiv">
+                                <label for="serial1">Серийный номер:</label>
+                                <input type="text" id="serial1" name="lastname" required>
+                            </div>
+                            <div class="DepartDiv">
+                                <label for="depart1">Отдел:</label>
+                                <input type="text" id="depart1" name="depart" required>
+                            </div>-->
+                            <div class="DovDiv">
+                                <label for="doc1">Файл:</label>
+                                <input accept="application/pdf" type="file" id="doc1" name="doc" required>
+                            </div>
+                        </div>
+                        <button data-id="" class="bttnAddNewEquip" type="button" onclick="ChangeFuncEquip(this,'ChangeFunc')">Изменить</button>
+                    </form>
+                    </div>
+                </div>
+           <ul id="EquipList">
+           <?php
+                    if ($conn->connect_error) {
+                        die("Ошибка подключения к базе данных: " . $conn->connect_error);
+                    }
+                    
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+
+                            echo    "<li class='ContentPlaque'>";
+                            echo    "<ul class='EquipInfo'>";
+                            echo        "<li id='{$row['ID']}'><b>{$row['name']}</b></li>";
+                            //echo        "<li name='SerialN'><img src='../icons/Key.svg' width='10px' alt='?'> {$row['serial']}</li>";
+                            //echo        "<li name='Otdel'><img src='../icons/Depart.svg' width='10px' alt='?'> {$row['depart']}</li>";
+                            echo    "</ul>";
+                            echo        "<div style = 'display:flex; flex-direction:row; align-items:center'>
+                                        <button id='Documentbttm' value='{$row['doc']}' onclick=\"OpenTechFile('{$row['doc']}')\"><img src='../icons/Document.svg' width='5px' alt='?'></button>";
+                                        if($_SESSION['logged_in']==3){
+                            echo        "
+                                            <div style = 'display:flex; flex-direction:row'>
+                                            <button data-id='{$row['ID']}' class='EditBttm' onclick=\"changeEquip(this,'Change')\"><img src='../icons/Change.svg' width='5px' alt='?'></button>
+                                            <button data-id='{$row['ID']}' class='Deletebttm' onclick=\"deleteEquip(this,'Delete')\"><img src='../icons/Delete.svg' width='10px' alt='?'></button>
+                                            </div>
+                                        </div>";
+                                        }
+                            echo    "</li>";
+
+                        }
+                    }
+           ?>
         </div>
     </div>
     <script src="scripts.js">

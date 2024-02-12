@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Подключение к базе данных
 $servername = "127.0.0.1";
 $username = "root";
@@ -11,7 +12,7 @@ if ($conn->connect_error) {
 }
 
     // Получение данных из POST-запроса
-    $idd = $_COOKIE['ID'];
+    $idd = $_SESSION['UserID'];
     $theme = $_POST['theme'];
     $equipment = $_POST['equip'];
     $content = strip_tags($_POST['description']);
@@ -39,8 +40,8 @@ if ($conn->connect_error) {
             // Получение текущей даты и времени
             $timestamp = date('Y-m-d H:i:s');
             // Запись первого сообщения в таблицу messages
-            $sql = "INSERT INTO messages (conversation_id, sender_id, message_text, timestamp)
-                    VALUES ('$conversationId', '$senderId', '$messageText', '$timestamp')";
+            $sql = "INSERT INTO messages (type,conversation_id, sender_id, message_text, timestamp)
+                    VALUES (0,'$conversationId', '$senderId', '$messageText', '$timestamp')";
 
             if ($conn->query($sql) === TRUE) {
                 // Сообщение успешно добавлено
@@ -50,7 +51,6 @@ if ($conn->connect_error) {
                 header("Location: ЛКПодатьЗаявку.html.php");
                 exit();
             } else {
-                echo "<script>alert('Ошибка при создании сообщения: " . $conn->error . "');</script>";
                 $conn->close();
                 $i=2;
                 setcookie("i",$i,time()+5,"/");
@@ -58,7 +58,6 @@ if ($conn->connect_error) {
                 exit();
             }
         } else {
-            echo "<script>alert('Ошибка при создании беседы: " . $conn->error . "');</script>";
             $conn->close();
             $i=3;
             setcookie("i",$i,time()+5,"/");
@@ -68,11 +67,12 @@ if ($conn->connect_error) {
     } 
     else 
     {
-        echo "<script>alert('Ошибка при создании заявки: " . $conn->error . "');</script>";
+        echo '<script>alert(\'' . $_SESSION['UserID'] . '\');</script>';
+
         $conn->close();
         $i=4;
         setcookie("i",$i,time()+5,"/");
-        header("Location: ЛКПодатьЗаявку.html.php");
+        //header("Location: ЛКПодатьЗаявку.html.php");
         exit();
     }
 

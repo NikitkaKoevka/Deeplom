@@ -35,7 +35,6 @@ ul
 {
     padding-right: 20px;
     width: 500px;
-    height: 600px;
     overflow:auto;
     scrollbar-width: none;
 }
@@ -43,7 +42,7 @@ ul
 {
     min-width: 860px;
     min-height: 600px;
-    max-height: 100%;
+    max-height: 600px;
     background-color:#ffffff;
     border-radius:20px;
     display: flex;
@@ -148,13 +147,14 @@ ul
 {
     word-break: break-all;
     white-space: pre-line;
-    max-width: 200px;
+    max-width: 270px;
     background-color: #9fd2ff;
     border-radius: 10px;
     margin-bottom: 10px;
     padding: 7px;
     font-weight: 300;
     font-size: 12px;
+    width:fit-content;
 
 }
 .left
@@ -282,7 +282,8 @@ select
 .typetext
 {
     max-height: 40px;
-    max-width: 250px;
+    width: 270px;
+    min-width: 190px;
     border-radius:10px;
     font-family: Inter;
     font-size: 12px;
@@ -292,11 +293,18 @@ select
 }
 .send
 {
-    width: 80px;
-    height: 30px;
-    border-radius:20px;
-    border-radius: 10px;
-    border: solid 1px #d9d9d9;
+    width: fit-content;
+    background:none;
+    border: none;
+}
+.send:hover
+{
+    background:none;
+    border: none;
+}
+.sendpic
+{
+    width: 40px;
 }
 input[type="file"] 
 {
@@ -333,4 +341,20 @@ textarea {
 #Theme
 {
     text-align: left;
+}
+
+#contextMenu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius:10px;
+    padding: 5px;
+    z-index: 1000;
+  }
+  
+.messPhoto
+{
+    width:250px;
+    height:auto ;
 }

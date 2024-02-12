@@ -26,8 +26,14 @@
     $dbname = "istok";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
+    $userID=$_SESSION['UserID'];
 
-    $idd = $_COOKIE['ID'];
+    $sql = "SELECT * FROM user WHERE ID = '$userID'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_array();
+    $firstName= $row['name'];
+    $lastName= $row['lastname'];
+    $photo= $row['photolink'];
 
     $sql = "SELECT * FROM conversations WHERE ID = '$conversation_id'";
     $result = $conn->query($sql);
@@ -40,7 +46,7 @@
 </head>
 
 <body>
-<form class="bbody"id="Entry" method="post">
+<form class="bbody" id="Entry" method="post">
 
         <div class="container">
             <div class="Application">
@@ -67,11 +73,11 @@
             <div class="profile">
                 <div>
                 <div class="avajp">
-                <img src="<?php echo $_SESSION['photo'];?>" alt="ava" class="avatarka">
+                <img src="<?php echo $photo;?>" alt="ava" class="avatarka">
                 </div>
                 <div class="info">
-                    <p id="Fname" style="font-weight:600"><?php echo $_SESSION['first_name']; ?></p>
-                    <p id="Sname" style="font-weight:600"><?php echo $_SESSION['last_name']; ?></p>
+                    <p id="Fname" style="font-weight:600"><?php echo $firstName; ?></p>
+                    <p id="Sname" style="font-weight:600"><?php echo $lastName; ?></p>
                 </div>
                 </div>
                 

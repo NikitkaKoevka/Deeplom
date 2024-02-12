@@ -12,16 +12,18 @@
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="BttnLinks.css">
     <link rel="stylesheet" href="body.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Дэб</title>
     <?php
     session_start();
-    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== 3) {
+    if (!isset($_SESSION['logged_in']) || ($_SESSION['logged_in'] !== 3 && $_SESSION['logged_in'] !== 2)) {
         // если пользователь не вошел в систему, перенаправляем на страницу логина
         session_destroy();
         header("Location: ../Вход/Страница входа.html");
         exit();
-    }
-    $idd = $_COOKIE['ID'];
+    }   
+    $idd = $_SESSION['UserID'];
     $servername = "127.0.0.1";
     $username = "root";
     $password = "";
@@ -33,6 +35,7 @@
     $roww=$result->fetch_array();
     $fname=$roww['name'];
     $lname=$roww['lastname'];
+    $photo= $roww['photolink'];
     ?>
 </head>
 <body>
@@ -48,10 +51,10 @@
                     <p class="FLName">
                     <?php echo $fname; ?><?php echo ' '; ?><?php echo $lname; ?>
                     </p >
-                    <a href="../Вход/Страница входа.html" class="LogOut">Выход</a>
+                    <a href="../Вход/LogOut.php" class="LogOut">Выход</a>
                 </div>
                 <div class="SI2">
-                    <img src="<?php echo $_SESSION['photo'];?>" alt="ava" class="Ava">
+                    <img src="<?php echo $photo;?>" alt="ava" class="Ava">
                 </div>
             </div>
         </div>
@@ -91,23 +94,33 @@
                     <img src="../icons/branchicons/поддержка.svg" alt="icon">
                     <p class="HrefLink" onclick="SupportAlert()">Поддержка</p >
                 </div>
+                <!--
                 <div class="linkone">
                     <img src="../icons/branchicons/шестеренка.svg" alt="icon">
                     <a class="HrefLink"href="Настройки.html.php">Настройки</a >
                 </div>
+                -->
             </div>
         </div>
         <div class="Dashboard">
-            <p class="DashboardTitle">Дэшборд сотрудника</p>
             <div class="DiagRow">
-                <div class="DiagSost"></div>
-                <div class="DiagOcenok"></div>
+                <div class="DiagOcenok">
+                    <h2 class='diagrammTitle'>Оценки пользователей</h2>
+                    <canvas id="ratingChart" width="400" height="400"></canvas>
+                </div>
+                <div class="DiagSost">
+                    <h2 class='diagrammTitle'>Состояния заявок</h2>
+                    <canvas id="ratingChart2" width="400" height="400"></canvas>
+                </div>
             </div>
-            <div class="DiagLid"></div>
+            <div class="DiagLid">
+                <h2 class='diagrammTitle'>Кол-во завершенных заявок</h2>
+                    <canvas id="ratingChart3" width="auto" height="150px"></canvas>
+            </div>
            
         </div>
     </div>
-    <script src="scripts.js">
+    <script src="dashboard.js">
     </script>
 </body>
 </html>

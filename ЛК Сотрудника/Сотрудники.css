@@ -24,7 +24,7 @@ li {list-style-type: none;}
 {
     min-width: 400px;
     min-height: 600px;
-    max-height: 100%;
+    max-height: 600px;
     background-color:#ffffff;
     border-radius:20px;
     display: flex;
@@ -38,7 +38,7 @@ li {list-style-type: none;}
     display: flex;
     flex-direction: column-reverse;
 }
-.NUser
+.ContentPlaque
 {
     padding-left: 30px;
     padding-right: 30px;
@@ -47,7 +47,8 @@ li {list-style-type: none;}
     border-bottom:1px solid #d9d9d9;
     display: flex;
     flex-direction: row;
-  justify-content: space-between;
+    justify-content: space-between;
+    align-items:center;
 }
 .SearchInput
 {
@@ -91,7 +92,7 @@ li {list-style-type: none;}
     
     align-items:center;
 }
-#AllSotrud{padding: 20px; color:#797979}
+#All{padding: 20px; color:#797979}
 .number
 {   
     display: flex;
@@ -116,4 +117,246 @@ li {list-style-type: none;}
 .paperclip
 {
     width: 15px;
+}
+
+.UserInfo
+{
+    max-width: 200px;
+    min-width: 200px;
+}
+.LongEmail
+{
+    max-width: 120px;
+    min-width: 120px;
+    word-wrap: break-word;
+}
+a{
+    text-decoration: none;
+    color: #203cb8;
+}
+#userList
+{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+
+.modal {
+    color:#4C5395;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+.modal2 {
+    color:#4C5395;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+
+.modal-content {
+    background-color: #fefefe;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 20px;
+    width: 450px;
+    height: 450px;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 100px;
+}
+
+#name
+{
+    border-radius:10px;
+    border:1px solid #d9d9d9;
+    height: 30px;
+    max-width: 300px;
+    width: 150px;
+    padding: 10px;
+}
+#lastname
+{
+    border-radius:10px;
+    border:1px solid #d9d9d9;
+    height: 30px;
+    max-width: 300px;
+    width: 150px;
+    padding: 10px;
+}
+#email
+{
+    border-radius:10px;
+    border:1px solid #d9d9d9;
+    height: 30px;
+    max-width: 300px;
+    width: 150px;
+    padding: 10px;
+}
+#phone
+{
+    border-radius:10px;
+    border:1px solid #d9d9d9;
+    height: 30px;
+    max-width: 300px;
+    width: 150px;
+    padding: 10px;
+}
+#accessLevel
+{
+    border-radius:10px;
+    border:1px solid #d9d9d9;
+    height: 30px;
+    max-width: 300px;
+    width: 150px;
+}
+#name1
+{
+    border-radius:10px;
+    border:1px solid #d9d9d9;
+    height: 30px;
+    max-width: 300px;
+    width: 150px;
+    padding: 10px;
+}
+#lastname1
+{
+    border-radius:10px;
+    border:1px solid #d9d9d9;
+    height: 30px;
+    max-width: 300px;
+    width: 150px;
+    padding: 10px;
+}
+#email1
+{
+    border-radius:10px;
+    border:1px solid #d9d9d9;
+    height: 30px;
+    max-width: 300px;
+    width: 150px;
+    padding: 10px;
+}
+#phone1
+{
+    border-radius:10px;
+    border:1px solid #d9d9d9;
+    height: 30px;
+    max-width: 300px;
+    width: 150px;
+    padding: 10px;
+}
+#accessLevel1
+{
+    border-radius:10px;
+    border:1px solid #d9d9d9;
+    height: 30px;
+    max-width: 300px;
+    width: 150px;
+}
+.bttnAddNewSotrud
+{
+    background-color:#7e84b4;
+    color:#ffffff;
+    font-size: 14px;
+    width: 70px;
+    height: 35px;
+    transition: 0.5s;   
+    margin-top: 20px;
+    margin-left: 40%;
+    border:none;
+}
+.bttnAddNewSotrud:hover
+{
+    transform: scale(1.05);
+    width: 75px;
+    height: 40px;
+    background-color:#6c729e;
+}
+.AddSotrudHeader
+{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items:center;
+}
+.AddSotrudTitle
+{
+    color:#4C5395;
+    font-family: Stolzl;
+    font-weight: 400;
+}
+.SotrudDetails
+{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 270px;
+    justify-content: space-between;
+
+}
+.NameDiv
+{
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    justify-content: space-between;
+}
+.LastNameDiv
+{
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    justify-content: space-between;
+}
+.EmailDiv
+{
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    justify-content: space-between;
+}
+.PhoneDiv
+{
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    justify-content: space-between;
+}
+.AccessLevelDiv
+{
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    justify-content: space-between;
 }

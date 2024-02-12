@@ -54,8 +54,8 @@ if ($result->num_rows > 0) {
             $timestamp = date('Y-m-d H:i:s');
 
             // Запись первого сообщения в таблицу messages
-            $sql = "INSERT INTO messages (conversation_id, sender_id, message_text, timestamp)
-                    VALUES ('$conversationId', '$senderId', '$messageText', '$timestamp')";
+            $sql = "INSERT INTO messages (type,conversation_id, sender_id, message_text, timestamp)
+                    VALUES (0,'$conversationId', '$senderId', '$messageText', '$timestamp')";
 
             if ($conn->query($sql) === TRUE) {
                 // Сообщение успешно добавлено
@@ -83,12 +83,16 @@ if ($result->num_rows > 0) {
 } else {
 
     // Создание нового пользователя
-    $sql = "INSERT INTO user (ID, name, lastname, phone, email, usertype,photolink) 
-            VALUES ('','$firstName', '$lastName', '$phone', '$email', '1',$rrr)";
+    
+    $sql = "INSERT INTO user (ID, name, lastname, email, phone, usertype, password, photolink) 
+    VALUES (NULL, '$firstName', '$lastName', '$email', '$phone', '1', '', NULL)";
 
     if ($conn->query($sql) === TRUE) {
         // Получение ID только что созданного пользователя
-
+        $sql = "SELECT * FROM user WHERE email = '$email'";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        $userId = $row['ID'];
         // Получение текущей даты и времени
         $creationDate = date('Y-m-d H:i:s');
 
@@ -101,7 +105,7 @@ if ($result->num_rows > 0) {
             $requestId = $conn->insert_id; // Получаем ID только что созданной заявки
 
             // Создание новой беседы (conversation)
-            $sql = "INSERT INTO conversations (ID, user_id1, user_id2) VALUES ('','$userId', NULL)"; // NULL - ID администратора, с которым будет беседа
+            $sql = "INSERT INTO conversations (ID, user_id1, user_id2) VALUES ($requestId,'$userId', NULL)"; // NULL - ID администратора, с которым будет беседа
 
             if ($conn->query($sql) === TRUE) {
                 $conversationId = $conn->insert_id; // Получаем ID только что созданной беседы
@@ -114,8 +118,8 @@ if ($result->num_rows > 0) {
                 $timestamp = date('Y-m-d H:i:s');
 
                 // Запись первого сообщения в таблицу messages
-                $sql = "INSERT INTO messages (ID,conversation_id, sender_id, message_text, timestamp)
-                VALUES ('','$conversationId', '$senderId', '$messageText', '$timestamp')";
+                $sql = "INSERT INTO messages (type,conversation_id, sender_id, message_text, timestamp)
+                VALUES (0,'$conversationId', '$senderId', '$messageText', '$timestamp')";
 
                 if ($conn->query($sql) === TRUE) {
                     // Сообщение успешно добавлено
@@ -135,20 +139,19 @@ if ($result->num_rows > 0) {
                 exit();
             }
         } else {
-            echo "<script>alert('Ошибка при создании заявки: " . $conn->error . "');</script>";
+            echo '<script>alert("Ошибка при создании заявки: ' .  $conn->error . '");</script>';
             $conn->close();
-            header("Location: Страница подачи заявки.html");
+            header("Location: Страница входа.html");
             exit();
         }
     } else {
-        echo "<script>alert('Ошибка при создании пользователя: " . $conn->error . "');</script>";
+        echo '<script>alert("Ошибка при создании заявки: ' .  $conn->error . '");</script>';
         $conn->close();
-        header("Location: Страница входа.html");
+        echo '<script>window.location.href = "Страница подачи заявки.html";</script>'; // 1 секунда
         exit();
     }
 }
 
-require("Страница подачи заявки.html");
-$conn->close();
-exit();
+
+
 ?>

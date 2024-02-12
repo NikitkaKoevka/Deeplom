@@ -14,7 +14,7 @@ $statusi=$_POST['statusi'];
 $processing=$_POST['processing'];
 $idd = $_COOKIE['conversation_id'];
 
-if($statusi=='Обработка'){
+if($statusi=='В процессе'){
     $creationDate = date('Y-m-d H:i:s');
     $sql = "UPDATE request SET Request_response='$respon', Request_viewer='$watcher', Request_status='$statusi', PlanDate='$processing', Start_time='$creationDate' WHERE ID='$idd'";
     $result = $conn->query($sql);

@@ -1,4 +1,5 @@
 <?php
+    session_start();
 // Подключение к базе данных
 $servername = "127.0.0.1";
 $username = "root";
@@ -9,8 +10,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 $conversation_id= $_COOKIE['conversation_id'];
 $creationDate = date('Y-m-d H:i:s');
-$idd = $_COOKIE['ID'];
-$sql = "INSERT INTO messages (ID, conversation_id, sender_id, message_text, timestamp) VALUES (NULL, '$conversation_id', '$idd', '$message', '$creationDate')";
+$userID=$_SESSION['UserID'];
+$sql = "INSERT INTO messages (ID, type,conversation_id, sender_id, message_text, timestamp) VALUES (NULL, 0,'$conversation_id', '$userID', '$message', '$creationDate')";
 
 $result1 = $conn->query($sql);
 

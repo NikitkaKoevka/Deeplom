@@ -1,6 +1,6 @@
 body
 {
-    background-color:#dbdbdb;
+    background: rgb(184, 200, 231);
     display: flex;
     min-height: 100%;
     flex-direction: column;

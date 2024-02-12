@@ -22,57 +22,57 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_array();
     if($row['usertype']==1)
     {
-        setcookie("ID", $row['ID'],0,"/");
+        //setcookie("ID", $row['ID'],0,"/");
     
         $userId = $row['ID'];
-        $firstname = $row['name'];
-        $lastname = $row['lastname'];
-        $foto=$row['photolink'];
+        //$firstname = $row['name'];
+        //$lastname = $row['lastname'];
+        //$foto=$row['photolink'];
     
             session_start();
-            $_SESSION['photo']=$foto;
+            //$_SESSION['photo']=$foto;
             $_SESSION['logged_in']=1;
-            $_SESSION['UserID']=$user_id;
-            $_SESSION['first_name'] = $firstname;
-            $_SESSION['last_name'] = $lastname; 
+            $_SESSION['UserID']=$userId;
+            //$_SESSION['first_name'] = $firstname;
+            //$_SESSION['last_name'] = $lastname; 
             $conn->close();
             header("Location: \ЛК Клиента\ЛК1.html.php");
             exit();
     }
     else if($row['usertype']==2)
     {
-        setcookie("ID", $row['ID'],0,"/");
+        //setcookie("ID", $row['ID'],0,"/");
     
         $userId = $row['ID'];
-        $firstname = $row['name'];
-        $lastname = $row['lastname'];
-        $foto=$row['photolink'];
+        //$firstname = $row['name'];
+        //$lastname = $row['lastname'];
+        //$foto=$row['photolink'];
         
             session_start();
-            $_SESSION['photo']=$foto;
+            //$_SESSION['photo']=$foto;
             $_SESSION['logged_in']=2;
-            $_SESSION['UserID']=$user_id;
-            $_SESSION['first_name'] = $firstname;
-            $_SESSION['last_name'] = $lastname; 
+            $_SESSION['UserID']=$userId;
+            //$_SESSION['first_name'] = $firstname;
+            //$_SESSION['last_name'] = $lastname; 
             $conn->close();
             header("Location: \ЛК Сотрудника\Заявки.html.php");
             exit();
     }
     else if($row['usertype']==3)
     {
-        setcookie("ID", $row['ID'],0,"/");
+        //setcookie("ID", $row['ID'],0,"/");
     
         $userId = $row['ID'];
-        $firstname = $row['name'];
-        $lastname = $row['lastname'];
-        $foto=$row['photolink'];
+        //$firstname = $row['name'];
+        //$lastname = $row['lastname'];
+        //$foto=$row['photolink'];
     
             session_start();
-            $_SESSION['photo']=$foto;
+            //$_SESSION['photo']=$foto;
             $_SESSION['logged_in']=3;
-            $_SESSION['UserID']=$user_id;
-            $_SESSION['first_name'] = $firstname;
-            $_SESSION['last_name'] = $lastname; 
+            $_SESSION['UserID']=$userId;
+            //$_SESSION['first_name'] = $firstname;
+            //$_SESSION['last_name'] = $lastname; 
             $conn->close();
             header("Location: \ЛК Сотрудника\Заявки.html.php");
             exit();
@@ -80,10 +80,9 @@ if ($result->num_rows > 0) {
     }
     else {
    
-        echo "<script>alert('Такой пользователь не зарегистрирован: " . $conn->error . "');</script>";
-        
+        echo '<script>alert("Ошибка при входе: ' .  $conn->error . '");</script>';
+        echo '<script>window.location.href = "Страница входа.html";</script>'; 
         $conn->close();
-        header("Location: Страница входа.html");
         exit();
     }
 

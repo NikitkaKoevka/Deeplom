@@ -12,16 +12,17 @@
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="BttnLinks.css">
     <link rel="stylesheet" href="body.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Настройки</title>
     <?php
     session_start();
-    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== 3) {
+    if (!isset($_SESSION['logged_in']) || ($_SESSION['logged_in'] !== 3 && $_SESSION['logged_in'] !== 2)) {
         // если пользователь не вошел в систему, перенаправляем на страницу логина
         session_destroy();
         header("Location: ../Вход/Страница входа.html");
         exit();
-    }
-    $idd = $_COOKIE['ID'];
+    }   
+    $idd = $_SESSION['UserID'];
     $servername = "127.0.0.1";
     $username = "root";
     $password = "";
@@ -33,6 +34,7 @@
     $roww=$result->fetch_array();
     $fname=$roww['name'];
     $lname=$roww['lastname'];
+    $photo= $roww['photolink'];
     ?>
 </head>
 <body>
@@ -48,10 +50,10 @@
                     <p class="FLName">
                     <?php echo $fname; ?><?php echo ' '; ?><?php echo $lname; ?>
                     </p >
-                    <a href="../Вход/Страница входа.html" class="LogOut">Выход</a>
+                    <a href="../Вход/LogOut.php" class="LogOut">Выход</a>
                 </div>
                 <div class="SI2">
-                    <img src="<?php echo $_SESSION['photo'];?>" alt="ava" class="Ava">
+                    <img src="<?php echo $photo;?>" alt="ava" class="Ava">
                 </div>
             </div>
         </div>
@@ -91,24 +93,19 @@
                     <img src="../icons/branchicons/поддержка.svg" alt="icon">
                     <p class="HrefLink" onclick="SupportAlert()">Поддержка</p >
                 </div>
+                <!--
                 <div class="linkone">
                     <img src="../icons/branchicons/шестеренка.svg" alt="icon">
                     <a class="HrefLink"href="Настройки.html.php">Настройки</a >
                 </div>
+                -->
             </div>
         </div>
         <div class="Settings">
             <div class="General">
                 <p>Общие:</p>
                 <ul>
-                    <li>
-                        <label for="ViewMode">Режим по умолчанию при просмотре заявления</label>
-                        <select name="Mode" id="ViewMode" class="Selection">
-                            <option value="None"></option>
-                            <option value="InProcess">Обработка</option>
-                        </select>
-                        <button class="SettingsBttn">Обновить</button>
-                    </li>
+
                     <li>
                         <label for="SizeVal">Максимальный размер загружаемых файлов</label>
                         <input type="numder" id="SizeVal">
@@ -141,25 +138,6 @@
                 <button id="SLAbttnLoad"class="SettingsBttn">
                     Загрузить SLA
                 </button>
-            </div>
-            <div class="Rights">
-                <p>Права доступа пользователей:</p>
-                <div class="Blocks">
-                    <div class="Block2">
-                        <label for="Users">Сотрудники:</label>
-                        <div class="SubBlock2">
-                            <select name="SotrList" id="Sotrud"class="Selection">
-                                <option value=""></option>
-                            </select>
-                            <select name="AccessLvl" id="Lvl"class="Selection">
-                                <option value="Client">Клиент</option>
-                                <option value="Sotrud">Сотрудник</option>
-                                <option value="Admin">Админ</option>
-                            </select>
-                            <button class="SettingsBttn">Обновить</button>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="License">
                 <p>Лицензия:</p>

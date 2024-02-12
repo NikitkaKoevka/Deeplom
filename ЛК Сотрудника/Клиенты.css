@@ -24,23 +24,23 @@ li {list-style-type: none;}
 {
     min-width: 400px;
     min-height: 600px;
-    max-height: 100%;
+    max-height: 600px;
     background-color:#ffffff;
     border-radius:20px;
     display: flex;
     flex-direction: column;
-
     padding: 10px;
 
 }
-.UserList
+#userList
 {
     display: flex;
     flex-direction: column-reverse;
-    
-   
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
-.NUser
+.ContentPlaque
 {
     padding-left: 30px;
     padding-right: 30px;
@@ -93,7 +93,7 @@ li {list-style-type: none;}
     
     align-items:center;
 }
-#AllUsers{padding: 20px; color:#797979}
+#All{padding: 20px; color:#797979}
 .number
 {   
     display: flex;
@@ -112,4 +112,17 @@ li {list-style-type: none;}
     color: #000000;
     font-weight: 300;
     
+}
+.LongEmail
+{
+    max-width: 120px;
+    min-width: 120px;
+    word-wrap: break-word;
+}
+
+/*Нужно для сокрытия скролбара, он обязателен*/
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
 }

@@ -21,61 +21,59 @@ $password1= (md5($password));
 // Проверка, существует ли пользователь с указанной почтой
 $sql = "SELECT * FROM user WHERE email = '$email'";
 $result = $conn->query($sql);
-$rrr='/photos/man-silhouette.jpg';
+$foto='/photos/man-silhouette.jpg';
 if ($result->num_rows > 0) 
 {
-    // Пользователь уже существует, записываем данные заявки в таблицу request
+    // Пользователь уже существует, записываем данные заявки в таблицу user
     $row = $result->fetch_assoc();
     $userId = $row['ID'];
-
     // Запись данных заявки в таблицу request
-    $sql = "INSERT INTO user (ID, name, lastname, phone, email, password, usertype,photolink) 
-            VALUES ('$userId', '$firstname', '$lastname', '$phone', '$email','$password1','1','$rrr')";
+    $sql = "UPDATE user SET password = '$password1', photolink = '$foto' WHERE user.ID = '$userId'";
 
     if ($conn->query($sql) === TRUE) 
     {
         echo "<script>alert('Вы были зарегистрированы');</script>";
         session_start();
-        setcookie("ID", $row['ID'],0,"/");
+
+        $_SESSION['UserID']=$userId;
         $_SESSION['logged_in']=1;
-        $_SESSION['first_name'] = $firstname;
-        $_SESSION['last_name'] = $lastname; 
+
         $conn->close();
         header("Location: \ЛК Клиента\ЛК1.html.php");
         exit();
     } else 
     {
-        echo "<script>alert('Ошибка при регистрации: " . $conn->error . "');</script>";
+        echo '<script>alert("Ошибка при регистрации пользователя: ' .  $conn->error . '");</script>';
+        echo '<script>window.location.href = "Страница регистрации.html";</script>'; 
         $conn->close();
-        
-        header("Location: Страница регистрации.html");
         exit();
     }
 } 
 else 
 {
-    $userId = $conn->insert_id;
+   
     // Создание нового пользователя
-    $sql = "INSERT INTO user (ID, name, lastname, phone, email, password, usertype,photolink) 
-            VALUES ('$userId', '$firstname', '$lastname', '$phone', '$email','$password1','1','$rrr')";
+    $sql = "INSERT INTO user (ID, name, lastname, phone, email, password, usertype, photolink) 
+            VALUES (NULL, '$firstname', '$lastname', '$phone', '$email','$password1','1','$foto')";
     
     if ($conn->query($sql) === TRUE) 
     {
-        echo "<script>alert('Вы были зарегистрированы');</script>";
+        $sql = "SELECT * FROM user WHERE email = '$email'";
+        $result = $conn->query($sql);
+        $row = $result->fetch_array();
+        $userId = $row['ID'];
         session_start();
-        setcookie("ID", $row['ID'],0,"/");
+        
+        $_SESSION['UserID']=$userId;
         $_SESSION['logged_in']=1;
-        $_SESSION['first_name'] = $firstname;
-        $_SESSION['last_name'] = $lastname; 
         $conn->close();
         header("Location: \ЛК Клиента\ЛК1.html.php");
         exit();
     } else 
     {
-        echo "<script>alert('Ошибка при регистрации: " . $conn->error . "');</script>";
+        echo '<script>alert("Ошибка при регистрации пользователя: ' .  $conn->error . '");</script>';
+        echo '<script>window.location.href = "Страница регистрации.html";</script>'; 
         $conn->close();
-
-        header("Location: Страница регистрации.html");
         exit();
     }
 

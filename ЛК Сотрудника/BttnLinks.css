@@ -12,3 +12,78 @@ button:hover
 }
 .HrefLink
 { margin-left:10px ;color: #4C5395;text-decoration: none;}
+.EditSotrud
+{
+    width: 70px;
+    height: 25px;
+}
+.DeleteSotrud
+{
+    width: 70px;
+    height: 25px;
+}
+.EditBttm
+{
+    background: none;
+    border:none;
+    width: 28px;
+    height: 28px;
+}
+.EditBttm:hover
+{
+    background: none;
+    border:none;
+}
+.Deletebttm
+{
+    background: none;
+    border:none;
+    width: 28px;
+    height: 28px;
+}
+.Deletebttm:hover
+{
+    background: none;
+    border:none;
+    color:#000000;
+}
+.Editbttms
+{
+    width: 100px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+#Documentbttm
+{
+    height: 30px;
+    width: 30px;
+    border:none;
+    background: none;
+}
+.addBttm
+{
+    height: 32px;
+    width: 32px;
+    border:none;
+    background: none;
+    margin-left: 30px;
+}
+.addBttm:hover
+{
+    border:none;
+    background: none;
+    margin-left: 30px;
+}
+
+.delete {
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+    background:none;
+    border:none;
+  }
+  .delete:hover{
+    background:none;
+
+  }

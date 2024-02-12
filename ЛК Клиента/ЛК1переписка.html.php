@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="ЛК1переписка.css">
     <link rel="icon" href="ISTOK.ico">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="chat.js"></script>
     <title>Личный кабинет</title>
     <?php
     session_start();
@@ -32,6 +31,15 @@
     {
         die("Ошибка подключения к базе данных: " . $conn->connect_error);
     }
+    $userID=$_SESSION['UserID'];
+    $sql = "SELECT * FROM user WHERE ID = '$userID'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_array();
+    $firstName= $row['name'];
+    $lastName= $row['lastname'];
+    $photo= $row['photolink'];
+
+    
     $conversation_id = $_POST['conversation_id'];
     setcookie("conversation_id", $conversation_id,0,"/");
     $sql = "SELECT * FROM conversations WHERE ID = '$conversation_id'";
@@ -53,6 +61,13 @@
 </head>
 <body>
     <div class="container">
+        
+        <div id='contextMenu'>
+                <button id='deleteMessage' class='delete' onclick="deleteMessage()">
+                    <img src='../icons/Delete.svg' width='25px' alt='?'>
+                </button>
+        </div>
+
         <div class="messenger">
             <div class="messheader">
             <a  href="ЛК1.html.php">
@@ -76,26 +91,25 @@
             <div id="messages">
 
             </div>
-            <form id="chat-form" >
+            <form id="chat-form" enctype='multipart/form-data'>
             <div class="sendmess">
-
-            <textarea id="chat-message" cols="30" rows="10" class="typetext" placeholder="Напишите сообщение"></textarea>
-            <label for="paperclip">
-                <img src="../icons/скрепка.svg" alt="p" class="paperclip">
-            </label>
-            <input id="paperclip" type="file" >
-            <button class="send">Отправить</button>
+                <textarea id="chat-message" cols="30" rows="10" class="typetext" placeholder="Напишите сообщение"></textarea>
+                <label for="paperclip">
+                    <img src="../icons/скрепка.svg" alt="p" class="paperclip">
+                </label>
+                <input accept='image/jpeg, image/png' id="paperclip" type="file" >
+                <button class="send"><img src='../icons/Send.svg' alt='p' class='sendpic' ></button>
            </div>
            </form>
         </div>
         <div class="profile">
             <div>
             <div class="avajp">
-            <img src="<?php echo $_SESSION['photo'];?>" alt="ava" class="avatarka">
+            <img src="<?php echo $photo;?>" alt="ava" class="avatarka">
             </div>
             <div class="info">
-                <p id="Fname" style="font-weight:600"><?php echo $_SESSION['first_name']; ?></p>
-                <p id="Sname" style="font-weight:600"><?php echo $_SESSION['last_name']; ?></p>
+                <p id="Fname" style="font-weight:600"><?php echo $firstName; ?></p>
+                <p id="Sname" style="font-weight:600"><?php echo $lastName; ?></p>
             </div>
             </div>
             
@@ -106,4 +120,5 @@
     </div>
 
 </body>
+<script src="chat.js"></script>
 </html>

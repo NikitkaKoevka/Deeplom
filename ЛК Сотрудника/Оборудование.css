@@ -5,7 +5,7 @@ html
     width: 100%;
 }
 
-li {list-style-type: none;}
+li {list-style-type: none;display:flex;align-items:center;}
 
 .container
 {
@@ -30,26 +30,209 @@ li {list-style-type: none;}
     flex-direction: column;
 
     padding: 10px;
-   
 
 }
-.EquipList
+#EquipList
 {
     display: flex;
     flex-direction: column-reverse;
-    
-   
+    margin-top:20px;
 }
-.NEquip
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+
+.modal {
+    color:#4C5395;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+.modal2 {
+    color:#4C5395;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+
+.modal-content {
+    background-color: #fefefe;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 20px;
+    width: 450px;
+    height: 270px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 100px;
+}
+
+#name
 {
+    border-radius:10px;
+    border:1px solid #d9d9d9;
+    height: 30px;
+    max-width: 300px;
+    width: 150px;
+    padding: 10px;
+}
+#serial
+{
+    border-radius:10px;
+    border:1px solid #d9d9d9;
+    height: 30px;
+    max-width: 300px;
+    width: 150px;
+    padding: 10px;
+}
+#depart
+{
+    border-radius:10px;
+    border:1px solid #d9d9d9;
+    height: 30px;
+    max-width: 300px;
+    width: 150px;
+    padding: 10px;
+}
+
+
+#name1
+{
+    border-radius:10px;
+    border:1px solid #d9d9d9;
+    height: 30px;
+    max-width: 300px;
+    width: 150px;
+    padding: 10px;
+}
+#serial1
+{
+    border-radius:10px;
+    border:1px solid #d9d9d9;
+    height: 30px;
+    max-width: 300px;
+    width: 150px;
+    padding: 10px;
+}
+#depart1
+{
+    border-radius:10px;
+    border:1px solid #d9d9d9;
+    height: 30px;
+    max-width: 300px;
+    width: 150px;
+    padding: 10px;
+}
+
+
+.bttnAddNewEquip
+{
+    background-color:#7e84b4;
+    color:#ffffff;
+    font-size: 14px;
+    width: 70px;
+    height: 35px;
+    transition: 0.5s;   
+    margin-top: 20px;
+    margin-left: 40%;
+    border:none;
+}
+.bttnAddNewEquip:hover
+{
+    transform: scale(1.05);
+    width: 75px;
+    height: 40px;
+    background-color:#6c729e;
+}
+.AddEquipHeader
+{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items:center;
+}
+.AddEquipTitle
+{
+    color:#4C5395;
+    font-family: Stolzl;
+    font-weight: 400;
+}
+.EquipDetails
+{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    height:auto;
+    justify-content: space-between;
+
+}
+.NameDiv
+{
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    justify-content: space-between;
+}
+.SerialDiv
+{
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    justify-content: space-between;
+}
+.DepartDiv
+{
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    justify-content: space-between;
+}
+.DovDiv
+{
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    justify-content: space-between;
+}
+
+
+.ContentPlaque
+{
+    height: 40px;
     padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border-bottom:1px solid #d9d9d9;
     display: flex;
     flex-direction: row;
-  justify-content: space-between;
+    justify-content: space-between;
+    align-items:center;
 }
 .SearchInput
 {
@@ -93,7 +276,7 @@ li {list-style-type: none;}
     
     align-items:center;
 }
-#AllEquip{margin:20px; color:#797979}
+#All{padding: 20px; color:#797979}
 .number
 {   
     display: flex;

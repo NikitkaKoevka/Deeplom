@@ -12,16 +12,20 @@
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="BttnLinks.css">
     <link rel="stylesheet" href="body.css">
+    <script src="scripts.js">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Клиенты</title>
     <?php
     session_start();
-    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== 3) {
+    if (!isset($_SESSION['logged_in']) || ($_SESSION['logged_in'] !== 3 && $_SESSION['logged_in'] !== 2)) {
         // если пользователь не вошел в систему, перенаправляем на страницу логина
         session_destroy();
         header("Location: ../Вход/Страница входа.html");
         exit();
-    }
-    $idd = $_COOKIE['ID'];
+    }   
+    $idd = $_SESSION['UserID'];
+
     $servername = "127.0.0.1";
     $username = "root";
     $password = "";
@@ -33,6 +37,7 @@
     $roww=$result->fetch_array();
     $fname=$roww['name'];
     $lname=$roww['lastname'];
+    $photo= $roww['photolink'];
     ?>
 </head>
 <body>
@@ -48,10 +53,10 @@
                     <p class="FLName">
                     <?php echo $fname; ?><?php echo ' '; ?><?php echo $lname; ?>
                     </p >
-                    <a href="../Вход/Страница входа.html" class="LogOut">Выход</a>
+                    <a href="../Вход/LogOut.php" class="LogOut">Выход</a>
                 </div>
                 <div class="SI2">
-                    <img src="<?php echo $_SESSION['photo'];?>" alt="ava" class="Ava">
+                    <img src="<?php echo $photo;?>" alt="ava" class="Ava">
                 </div>
             </div>
         </div>
@@ -91,54 +96,67 @@
                     <img src="../icons/branchicons/поддержка.svg" alt="icon">
                     <p class="HrefLink" onclick="SupportAlert()">Поддержка</p >
                 </div>
+                <!--
                 <div class="linkone">
                     <img src="../icons/branchicons/шестеренка.svg" alt="icon">
                     <a class="HrefLink"href="Настройки.html.php">Настройки</a >
                 </div>
+                -->
             </div>
         </div>
         <div class="Users">
+        <?php
+                $query = "SELECT * FROM user WHERE usertype = 1 ";
+                $result = $conn->query($query);
+                $count = mysqli_num_rows($result);
+        ?>
             <div class="UserHeader">
                 <div class="Polzovateli">
                     <p>Все пользователи</p>
-                    <p id="AllUsers">3</p>
+                    <p id="All"><?php echo $count;?></p>
                 </div>
-                <div class="Search">
-                    <input type="search" class="SearchInput" placeholder="Поиск пользователей">
-                    <button class="SearchBttn">
-                        <img src="../icons/Search.svg" width="10px" alt="?">
-                    </button>
-                </div>
+                    <div class="Search">
+                        <input type="search" id="searchInput" name="searchInput" class="SearchInput" placeholder="Поиск пользователей">
+                        <button type="submit" class="SearchBttn" onclick="searchFunc('Clients')">
+                            <img src="../icons/Search.svg" width="10px" alt="?">
+                        </button>
+                    </div>
             </div>
-           <ul class="UserList">
-            <li class="NUser">
-                <ul class="UserInfo">
-                    <li id="1234">#1234: <b>Коев Никита</b></li>
-                    <li id="email">Почта: <a href="mailto:mininkoma@mail.ru">mininkoma@mail.ru</a></li>
-                    <li id="phone">Телефон: <a href="telto:89993457631">89993457631</a></li>
-                </ul>
-                <button>Заявки пользователя</button>
-            </li>
-            <li class="NUser">
-                <ul class="UserInfo">
-                    <li id="1434">#1434: <b>Петров Пётр</b></li>
-                    <li id="email">Почта: <a href="mailto:346maseff54@mail.ru">346maseff54@mail.ru</a></li>
-                    <li id="phone">Телефон: <a href="telto:89063457151">89063457151</a></li>
-                </ul>
-                <button>Заявки пользователя</button>
-            </li>
-            <li class="NUser">
-                <ul class="UserInfo">
-                    <li id="1214">#1214: <b>Сидиров Ян</b></li>
-                    <li id="email">Почта: <a href="mailto:mkaliiin12@mail.ru">mkaliiin12@mail.ru</a></li>
-                    <li id="phone">Телефон: <a href="telto:89952717637">89952717637</a></li>
-                </ul>
-                <button>Заявки пользователя</button>
-            </li>
-           </ul>
+            <div id="userList">
+                    <?php
+                    if ($conn->connect_error) {
+                        die("Ошибка подключения к базе данных: " . $conn->connect_error);
+                    }
+                    
+                    $query = "SELECT * FROM user WHERE usertype = 1";
+                    $result = $conn->query($query);
+                    
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+
+                            echo "<li class='ContentPlaque'>";
+                            echo "<ul class='UserInfo'>";
+                            echo "<li><b>{$row['name']} {$row['lastname']}</b></li>";
+                            echo "<li><a class='LongEmail' href='mailto:{$row['email']}'>{$row['email']}</a></li>";
+                            echo "<li><a href='tel:{$row['phone']}'>{$row['phone']}</a></li>";
+                            echo "</ul>";
+                            echo "<form method='post' action='ЗаявкиОтс.php'>";
+                            echo "<button name='ID' value='{$row['ID']}')>Заявки пользователя</button>";
+                            echo "</form>";
+                            echo "</li>";
+
+                        }
+                    } else {
+                    
+                    }
+                    
+                    $conn->close();
+                    ?>
+            </div>
+
+
         </div>
     </div>
-    <script src="scripts.js">
-    </script>
+
 </body>
 </html>

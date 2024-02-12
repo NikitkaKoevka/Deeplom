@@ -21,7 +21,7 @@ a{text-decoration: none;color: #4C5395;}
 {
     min-width: 400px;
     min-height: 600px;
-    max-height: 100%;
+    max-height: 600px;
     background-color:#ffffff;
     border-radius:20px;
     display: flex;
@@ -51,9 +51,51 @@ a{text-decoration: none;color: #4C5395;}
 {
     display: flex;
     flex-direction: row;
-    width: 300px;
-    justify-content: space-around;
-    padding: 10px;
+    width:427px;
+    height: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    padding-left: 30px;
+}
+.addFAQ
+{
+    height: 32px;
+    width: 32px;
+}
+.Service
+{
+    width:120px ;
+    border:none;
+    background-color:#ffffff;
+    color:#4C5395;
+    transition: 0.5s;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px;
+}
+.Service:hover
+{
+    transform: scale(1.05);
+    background-color:rgb(255, 255, 255);
+
+}
+.Accedent
+{
+    width:120px ;
+    border:none;
+    background-color:#ffffff;
+    color:#4C5395;
+    transition: 0.5s;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px;
+}
+.Accedent:hover
+{
+    transform: scale(1.05);
+    background-color:rgb(255, 255, 255);
+
 }
 .SearchInput
 {
@@ -87,4 +129,219 @@ a{text-decoration: none;color: #4C5395;}
 .SearchBttn:hover
 {
     background-color: #ddd;
+}
+.Occasions
+{
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-top: 15px;
+}
+.Info
+{
+    color:#4C5395;
+    background-color: #ffffff;
+    border:none;
+    text-align: start;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    max-width: 250px;
+    font-size: 14px;
+
+}
+.Info:hover
+{
+    color:#7e84b4;
+    background-color: rgb(255, 255, 255);
+}
+.hidden-content
+{
+    display: none;
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 13px;
+    font-style: italic;
+}
+/*Нужно для сокрытия скролбара, он обязателен*/
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+.themeHeader
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 250px;
+    height: 30px;
+    word-wrap: break-word;
+}
+.contentLinks
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 120px;
+    font-weight: 400;
+    font-size: 12px;
+}
+.changeContent:hover
+{
+    color: rgb(91, 204, 100);
+}
+.deleteContent:hover
+{
+    color: rgb(204, 91, 91);
+}
+.FAQTitle
+{
+    text-align: center;
+    color:#4C5395;
+    font-family: Stolzl;
+    font-weight: 400;
+}
+.modal {
+    color:#4C5395;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+.modal2 {
+    color:#4C5395;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+
+.modal-content {
+    background-color: #fefefe;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 20px;
+    width: 450px;
+    height: 350px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 100px;
+}
+.ThemeAndContent
+{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: space-between;
+
+}
+.ThemeDiv
+{
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    justify-content: space-between;
+}
+.ContentDiv
+{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 90px;
+    justify-content: space-between;
+}
+#theme
+{
+    border-radius:10px;
+    border:1px solid #d9d9d9;
+    height: 30px;
+    max-width: 300px;
+    width: 300px;
+    padding: 10px
+}
+#theme1
+{
+    border-radius:10px;
+    border:1px solid #d9d9d9;
+    height: 30px;
+    max-width: 300px;
+    width: 300px;
+    padding: 10px
+}
+#content
+{
+    border-radius:10px;
+    border:1px solid #d9d9d9;
+    height: 100px;
+    width: 350px;
+    padding: 10px;
+    resize: none;
+}
+#content1
+{
+    border-radius:10px;
+    border:1px solid #d9d9d9;
+    height: 100px;
+    width: 350px;
+    padding: 10px;
+    resize: none;
+}
+.bttnAddNewFAQ
+{
+    background-color:#7e84b4;
+    color:#ffffff;
+    font-size: 14px;
+    width: 70px;
+    height: 35px;
+    transition: 0.5s;   
+    margin-top: 20px;
+    margin-left: 40%;
+    border:none;
+}
+.bttnAddNewFAQ:hover
+{
+    transform: scale(1.05);
+    width: 75px;
+    height: 40px;
+    background-color:#6c729e;
+}
+.FAQHeader
+{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items:center;
+}
+.Structure
+{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-between;
+    margin-top: 12px;
 }
