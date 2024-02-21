@@ -8,40 +8,46 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="icon" href="ISTOK.ico">
     <title>Регистрация</title>
 </head>
 <body>
-  <form id="Entry" action="registration.php" method="post">
+  <form id="Entry" method="post">
     <div class="container">
-     
-          <div  class="FullName">
+          <div class="RegTitle">Регистрация</div>
+          <div class="FullName">
             <div class="Name">
-              <label  for="fname">Имя:</label>
-              <input name="fname" type="text" class="fname">
+              <input name="fname" type="text" class="fname" placeholder="Имя">
             </div>
             <div class="LName">
-              <label class="LName" for="fname">Фамилия:</label>
-              <input name="lname" type="text" class="lname">
+              <input name="lname" type="text" class="lname" placeholder="Фамилия">
             </div>
           </div>
           <div class="Phone">
-          <label  for="phone">Телефон:</label>
-          <input name="phone" type="text" class="phone">
+          <input name="phone" type="text" class="phone" placeholder="Телефон">
           </div>
           <div class="Email">
-            <label  for="email">E-mail:</label>
-            <input name="email" type="text" class="email">
+            <input name="email" type="text" class="email" placeholder="E-mail">
           </div>
           <div class="Theme">
-            <label  for="password">Пароль:</label>
-            <input name="password" type="password" class="theme">
+            <div class="pwd_tip">
+              <input id="password" name="password" type="password" class="theme" placeholder="Пароль" oninput="verifPassword()">
+            </div>
           </div>
           <div class="LinkBtn">
             <button  id="description" class="LogIn" onclick="registrForm()">Зарегистрироваться</button>
           </div>
           <p class="GotLK">Есть личный кабинет?<a class="Login" href="Страница входа.html">Войти</a></p>
+          <div class="div_tip">
+            <a id="tip_link">
+              <img style="width:20px;height:15px" src="../icons/tip.svg" alt="?">
+            </a>
+            <div id="hidden_mod" class="modal_win">Пароль должен содержать не менее 6 латинских символов, строчные и прописные буквы, цифры или специальные символы</div>  
+            <p id="hidden_p" class="verif_win"></p>  
+          </div>
     </div>
+
       </form>
     <script src="scripts.js"></script>
 </body>

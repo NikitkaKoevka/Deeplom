@@ -5,7 +5,7 @@ html
 }
 body
 {
-    background-color: rgb(100, 100, 100);
+    background: linear-gradient(180deg, rgb(43, 102, 185) 0%, rgb(96, 145, 230) 32%, rgb(117, 218, 243) 100%);
     display: flex;
     min-height: 100%;
     justify-content: center;
@@ -13,29 +13,34 @@ body
     align-items: center;
     font-family: Inter;
     font-weight: 300;
+    
 }
 .container
 {
-    border-radius:  30px 30px 30px 30px;
-    background-color:#D9D9D9;
-    width: 420px;
-    height: 670px;
+    border-radius: 30px;
+    background-color: #ffffff9c;
+    width: 360px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items:center;
+    padding-left:86px ;
+    box-shadow: 1px 5px 12px 0px #5ca3c4;
 }
 
 /* Стили для ссылки на вход */
 .GotLK
 {
+    font-family: Nunito;
     font-size: 12px;
     text-align: center;
-    width: 150px;
+    width:187px;
+    padding: 20px;
 }
 
 .Login
 {
+    font-family: Nunito;
     text-decoration: none;
     color: #4B7EC9;
     font-weight: 600;
@@ -43,17 +48,17 @@ body
 /* остальные стили  */
 .LogIn
 {
+    font-family: Nunito;
     width: 171px;
     height: 45px;
     border-radius: 7px;
     background-color:#4B7EC9;
     border:none;
-    text-transform: uppercase;
     color:white;
-    font-size: 13px;
+    font-size: 14px;
     white-space: pre-line;/*//////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!////////////////*/
     margin-left: 0px;
-    box-shadow: 1px 5px 12px 0px rgb(167, 167, 167);
+    box-shadow: 1px 5px 12px 0px rgb(54 139 155 / 50%);
     transition: height 0.1s, width 0.1s ;
 }
 .LogIn:hover
@@ -70,19 +75,20 @@ body
     justify-content: center;
     align-items:center;
 }
-div >div,button {margin-top: 20px;margin-bottom: 20px; }
-label ~ input
+div >div,button {margin-bottom: 20px; }
+div > input
 {
+    font-family: Nunito;
     color:rgb(0, 0, 0);
     display: flex;
     border:none;
-    min-width: 187px;
-    min-height:37px;
+    width: 187px;
+    height:37px;
     flex-direction: column;
     border-radius: 7px;
     font-size: 14px;
     padding-left: 10px;
-    box-shadow: 1px 5px 12px 0px rgba(167, 167, 167, 0.5);
+    box-shadow: 1px 5px 12px 0px rgb(54 139 155 / 50%);
     
 }
 .description
@@ -91,4 +97,86 @@ label ~ input
     min-height: 113px;
     padding: 5px 5px;
     
+}
+.pwd_tip
+{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+}
+.theme
+{
+    color: rgb(0, 0, 0);
+    display: flex;
+    border: none;
+    width: 187px;
+    height: 37px;
+    flex-direction: column;
+    border-radius: 7px;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 1px 5px 12px 0px rgb(54 139 155 / 50%);
+}
+#tip_link
+{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin-top: -220px;
+    margin-left: 190px;
+}
+/*Для выделения инпута*/
+input:focus {
+    font-family: Nunito;
+    outline: 0px;
+}
+.modal_win
+{
+    font-family: Nunito;
+    visibility: hidden;
+    background-color:rgba(255, 255, 255, 0.8);
+    font-size: small;
+    border-radius:10px;
+    padding: 10px;
+    padding-top: 7px;
+    width: 200px;
+    z-index: 999;
+    margin-left: 216px;
+    margin-top: -45px;
+    position: relative;
+    opacity: 0; 
+    transition: opacity 0.3s;
+}
+
+#tip_link:hover + .modal_win
+{
+    visibility:visible;
+    opacity: 1; 
+    transition: opacity 0.3s;
+}
+.RegTitle
+{
+    font-size: 30px;
+    font-family: Nunito;
+    font-weight: 700;
+    color:#265dac;
+}
+.div_tip
+{
+    margin-bottom: 0px;
+    margin-left: 6px;
+}
+.verif_win
+{
+    display: none;
+    font-size: small;
+    border-radius:10px;
+    width: 200px;
+    font-weight: 600;
+    position: relative;
+    margin-top: -65px;
+    margin-left: -5px;
 }

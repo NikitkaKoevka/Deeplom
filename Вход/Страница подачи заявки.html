@@ -8,47 +8,38 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
   <link rel="icon" href="ISTOK.ico">
 
   <title>ISTOK support</title>
 </head>
 <body>
-  <div class="header">
-    <h1 class="headertitle">Обращение в техническую поддержку</h1>
-  </div>
- 
   <div class="container">
     <form id="Entry" method="post">
       <div class="content">
+        <div class="plaqueTitle">Обращение в техподдержку</div>
         <div class="FullName">
           <div class="Name">
-            <label for="fname">Имя:</label>
-            <input name="fname" type="text" class="fname">
+            <input name="fname" type="text" class="fname" placeholder="Имя" required>
           </div>
           <div class="LName">
-            <label for="lname">Фамилия:</label>
-            <input name="lname" type="text" class="lname">
+            <input name="lname" type="text" class="lname" placeholder="Фамилия" required>
           </div>
         </div>
         <div class="Phone">
-          <label for="phone">Телефон:</label>
-          <input name="phone" type="text" class="phone">
+          <input name="phone" type="text" class="phone" placeholder="Телефон" required>
         </div>
         <div class="Email">
-          <label for="email">E-mail:</label>
-          <input name="email" type="text" class="email">
+          <input name="email" type="text" class="email" placeholder="E-mail" required>
         </div>
         <div class="Theme">
-          <label for="theme">Тема обращения:</label>
-          <input name="theme" type="text" class="theme">
+          <input name="theme" type="text" class="theme" placeholder="Тема" required>
         </div>
         <div class="Equip">
-          <label for="equip">Оборудование:</label>
-          <input name="equip" type="text" class="equip">
+          <input name="equip" type="text" class="equip" placeholder="Оборудование" required>
         </div>
         <div class="Descrip">
-          <label for="content">Описание обращения:</label>
-          <textarea name="content" class="description"></textarea>
+          <textarea name="content" class="description" placeholder="Описание" required></textarea>
         </div>
 
         <div class="BtnSend">
@@ -56,10 +47,9 @@
         </div>
       
         <div class="footerPlaq">
+          <p class="LinkBtn">Есть личный кабинет?<a class="Login" href="Страница входа.html">Войти</a></p>
+
           <p class="registr">Нет личного кабинета?<a class="Zareg" href="Страница регистрации.html">Зарегистрируйтесь</a></p>
-          <div class="LinkBtn">
-              <a class="LogIn" href="Страница входа.html">войти в личный кабинет</a>   
-          </div>
         </div>
       </div>
     </form>

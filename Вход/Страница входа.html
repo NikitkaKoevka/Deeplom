@@ -8,24 +8,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
   <link rel="icon" href="ISTOK.ico">
     <title>Вход</title>
 </head>
 <body>
   <form  id="Entry" method="post">
     <div class="container">
-      
+          <div class="entryTitle">Вход</div>
           <div class="Email">
-            <label  for="email">E-mail:</label>
-            <input name="email" type="text" class="email">
+            <input name="email" type="text" class="email" placeholder="E-mail">
           </div>
           <div class="Theme">
-            <label  for="password">Пароль:</label>
-            <input name="password" type="password" class="theme">
+            <input name="password" type="password" class="theme" placeholder="Пароль" >
           </div>
           
           <div class="LinkBtn">
-            <button onclick=logInForm() id="description" class="LogIn">войти в личный кабинет</button>
+            <button onclick=logInForm() id="description" class="LogIn">Войти в ЛК</button>
           </div>
           <p class="registr">Нет личного кабинета?<a class="Zareg" href="Страница регистрации.html">Зарегистрируйтесь</a></p>
   

@@ -5,7 +5,7 @@ html
 }
 body
 {
-    background-color: rgb(100, 100, 100);
+    background: linear-gradient(180deg, rgb(43, 102, 185) 0%, rgb(96, 145, 230) 32%, rgb(117, 218, 243) 100%);
     display: flex;
     min-height: 100%;
     justify-content: center;
@@ -16,11 +16,11 @@ body
 }
 .container
 {
-    border-radius:  0px 0px 30px 30px;
-    background-color:#D9D9D9;
+    border-radius: 30px;
+    background-color: #ffffff9c;
     width: 520px;
     height: 678px;
-
+    box-shadow: 1px 5px 12px 0px #5ca3c4;
 }
 .header
 {
@@ -28,7 +28,7 @@ body
     justify-content: center;
     flex-direction: row;
     align-items: center;
-    background-color:#262626;
+    background-color:#c6eaff;
     width: 520px;
     height: 60px;
     border-radius: 30px 30px 0px 0px;
@@ -56,40 +56,41 @@ body
 }
 .registr
 {
+    font-family: Nunito;
     width: 140px;
     font-size: 12px;
 
 }
 .LogIn
 {
+    font-family: Nunito;
     width: 161px;
     height: 45px;
-    border-radius: 7px;
-    background-color:#4B7EC9;
     text-decoration: none;
-    text-transform: uppercase;
     text-align: center;
+    font-weight: 700;
     padding-top: 7px;
-    color:white;
-    font-size: 13px;
+    color:#4B7EC9;
+    font-size: 12px;
     white-space: pre-line;/*//////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!////////////////*/
     margin-left: 0px;
-    box-shadow: 1px 5px 12px 0px rgb(167, 167, 167);
-    transition: height 0.1s, width 0.1s ;
+    padding-top: 8px;
+
 }
-.LogIn:hover
+.Login
 {
-    width: 166px;
-    height: 50px;
-    transition: height 0.1s, width 0.1s ;
+    font-family: Nunito;
+    text-decoration: none;
+    color: #4B7EC9;
+    font-weight: 600;
 }
 .LinkBtn
 {
-    width: 170px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items:center;
+    font-family: Nunito;
+    font-size: 12px;
+    text-align: center;
+    width: 187px;
+    padding: 20px;
 }
 .BtnSend
 {
@@ -106,8 +107,9 @@ body
     align-items:center;
 }
 div > label,input,textarea,button {margin-left: 40px; }
-label ~ input,textarea
+div > input,textarea
 {
+    font-family: Nunito;
     color:rgb(0, 0, 0);
     display: flex;
     border:none;
@@ -117,7 +119,7 @@ label ~ input,textarea
     border-radius: 7px;
     font-size: 14px;
     padding-left: 10px;
-    box-shadow: 1px 5px 12px 0px rgba(167, 167, 167, 0.5);
+    box-shadow: 1px 5px 12px 0px rgb(54 139 155 / 50%);
 }
 
 .FullName
@@ -127,26 +129,19 @@ label ~ input,textarea
     flex-direction: row;
     justify-content: space-between;
 }
-.description
-{
-    min-width: 442px;
-    min-height: 113px;
-    padding: 5px 5px;
-    
-}
 .send
 {
+    font-family: Nunito;
     width: 161px;
     height: 37px;
     border-radius: 7px;
-    background-color:#515151;
+    background-color:#4B7EC9;
     border:none;
-    text-transform: uppercase;
     color:white;
-    font-size: 13px;
+    font-size: 14px;
     white-space: pre-line;
     margin-left: 0px;
-    box-shadow: 1px 5px 12px 0px rgb(167, 167, 167);
+    box-shadow: 1px 5px 12px 0px rgb(54 139 155 / 50%);
     transition: height 0.1s, width 0.1s ;
 }
 .send:hover
@@ -161,4 +156,25 @@ label ~ input,textarea
     text-decoration:none;
     color:#4B7EC9;
     font-weight: 600;
+}
+.description
+{
+    min-width: 442px;
+    min-height: 113px;
+    padding: 10px 10px;
+    resize: none;
+}
+.plaqueTitle
+{
+    text-align: center;
+    font-size: 30px;
+    color:#265dac;
+    font-weight: 700;
+    font-family: Nunito;
+    margin: 20px;
+}
+
+input, textarea:focus {
+    outline: 0px;
+    font-family: Nunito;
 }
