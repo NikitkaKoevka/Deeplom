@@ -71,7 +71,7 @@
         <div class="messenger">
             <div class="messheader">
             <a  href="ЛК1.html.php">
-                <img class="sendback"src="../icons/SendBack.svg" alt="<">
+                <img class="sendback" src="../icons/SendBack.svg" alt="<">
             </a>
 
                 <div class="SV">

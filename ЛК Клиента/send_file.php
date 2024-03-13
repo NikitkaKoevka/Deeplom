@@ -10,12 +10,12 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Ошибка подключения к базе данных: " . $conn->connect_error);
 }
-$conversation_id= $_COOKIE['conversation_id'];
+$conversation_id= $_POST['conversation_id'];
 $creationDate = date('Y-m-d H:i:s');
 $creationDateWithoutColon = str_replace(":", "_", $creationDate);
 $file = $_FILES["doc"];
 $targetDirectory = 'C:/ospanel/domains/Deeplom/mess_photos/';
-$newFileName = $conversation_id . "_" . $creationDateWithoutColon . "IMG"; // Создаем новое имя файла (например, имя + текущее время)
+$newFileName = $conversation_id . "_" . $creationDateWithoutColon . "IMG"; // Создаем новое имя файла
 
 
 

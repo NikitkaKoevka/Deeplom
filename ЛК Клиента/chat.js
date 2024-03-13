@@ -13,7 +13,8 @@ $(document).ready(function() {
                event.preventDefault();
                var message = $('#chat-message').val();
                if (message != '') {
-                sendMessage(message);
+                const conID = document.getElementById('conID').value;
+                sendMessage(message,conID);
                 $('#chat-message').val('');
                } // Вызываем функцию отправки сообщения
              }
@@ -35,42 +36,59 @@ $(document).ready(function() {
        event.preventDefault();
        var message = $('#chat-message').val();
        if (message != '') {
-        sendMessage(message);
+        const conID = document.getElementById('conID').value;
+        sendMessage(message,conID);
         $('#chat-message').val('');
         
        
        }
-       
+
       });
-   
+
     // Обновление списка сообщений каждые 5 секунд
     setInterval(function() {
-     getMessages();
+    const modalBlock = document.querySelector('.modal');
+    const conID = modalBlock.value;
+      if(modalBlock.style.display == 'block')getMessages(conID, modalBlock);
     }, 5000);
-   });
-   
+    });
 
+    function openReq(reqID)
+    {
+      console.log(reqID);
+      const modalBlock = document.querySelector('.modal');
+      modalBlock.value = reqID;
+      getMessages(reqID, modalBlock);
+    }
 
-
-   function getMessages() {
+    function getMessages(reqID,modalBlock) {
     $.ajax({
-     url: 'get_messages.php',
-     type: 'POST',
-     success: function(data) 
-     {
+      url: 'get_messages.php',
+      type: 'POST',
+      data:{conversation_id:reqID},
+      success: function(data) 
+      {
+      modalBlock.style.display = 'block';
       $('#messages').html(data);
       
-     }
+      }
     });
-   }
+    }
    
-   function sendMessage(message) {
+   function sendMessage(message,conID) 
+   {
+        const modalBlock = document.querySelector('.modal');
        $.ajax({
         url: 'send_message.php',
         type: 'POST',
-        data: {message: message},
+        data: 
+        {
+          conversation_id:conID,
+          message: message
+        },
         success: function() {
-         getMessages();
+          console.log('success');
+         getMessages(conID,modalBlock);
          setTimeout(()=>{ scrollToBottom();},600);
         }
        });
@@ -82,6 +100,16 @@ $(document).ready(function() {
        chatMessages.scrollTop = chatMessages.scrollHeight;
       }
 
+      function closeModal() {
+        document.querySelector(".modal").style.display = "none";
+        document.querySelectorAll("#messages .mess").forEach(div => div.remove());
+      }
+      function closeModal2() {
+        document.getElementById("myModal2").style.display = "none";
+      }
+      function closeModal3() {
+        document.getElementById("myModal3").style.display = "none";
+      }
 
   //--------------------------------------------------------------------------------------------------------
 //Ниже код для прикрепления фотки в переписку
@@ -94,23 +122,28 @@ if (labelElement) {
     labelElement.addEventListener('change', function() 
     {
         
-        var fileInput = document.getElementById('paperclip');
+        const fileInput = document.getElementById('paperclip');
+        const modalBlock = document.querySelector('.modal');
         console.log(fileInput);
         // Проверяем, выбран ли файл
         if (fileInput.files.length > 0) {
             var file = fileInput.files[0];
             var formData = new FormData();
+            const conID = document.getElementById('conID').value;
             formData.append('doc', file);
-  
+            formData.append('conversation_id', conID);
             // Отправляем файл на сервер с использованием AJAX
             $.ajax({
-                url: 'send_file.php', // Путь к вашему PHP-обработчику
+                url: 'send_file.php', // Путь к PHP-обработчику
                 type: 'POST',
                 data: formData,
                 processData: false,
                 contentType: false,
                 success: function(response) {
                     console.log(response);
+                    console.log('success');
+                    getMessages(conID,modalBlock);
+                    setTimeout(()=>{ scrollToBottom();},600);
                 },
                 error: function(error) {
                     console.error('Ошибка при загрузке файла: ' + error);

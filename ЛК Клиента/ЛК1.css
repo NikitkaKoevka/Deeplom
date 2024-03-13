@@ -3,9 +3,13 @@ html
 {
     height: 100%;
 }
+p
+{
+    font-family: Nunito;
+}
 body
 {
-    background-color:#C3C4CC;
+    background:linear-gradient(180deg, #6091e6 0%, #6091e6 32%, #75daf3 100%);
     display: flex;
     min-height: 100%;
     justify-content: center;
@@ -18,13 +22,16 @@ body
 ul
 {
     min-width: 50%;
-    
 }
 .container
 {
     display: flex;
     flex-direction: row;
-    width: 70%;
+    background-color: #ffffff9c;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow:1px 5px 10px 1px #5c78cd73;
+    width: 800px;
 }
 .Zayavlenie
 {
@@ -33,13 +40,14 @@ ul
     padding-right: 10px;
     height: 110px;
     width: 100%;
-    border: 1px solid #d9d9d9;
     border-radius:15px;
+    border:none;
     color: #646991;
     display: flex;
     flex-direction: column;
     justify-content:space-around;
     background-color:#FFFFFF;
+    box-shadow:1px 5px 10px 1px #5c78cd73;
     transition: 0.2s;
 }
 .Zayavlenie:hover
@@ -96,14 +104,154 @@ ul
 }
 .messenger
 {
-    background-color:#D5E3EF;
-    width: 70%;
+    width: 100%;
     height: 528px;
     overflow:auto;
     scrollbar-width: none;
-    border-radius:30px 0px 0px 30px;
+    border-radius:30px;
     padding: 20px;
-    border: 1px solid #d9d9d9;
+    padding-top: 7px;
+
+}
+.close
+{
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 40px;
+    margin-bottom: 10px;
+}
+.modal{
+    color: #000000;
+    font-weight: 300;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+.paperclip
+{
+    width: 15px;
+}
+.send
+{
+    width: 31px;
+    height: 31px;
+    background:none;
+    border:none;
+    transition:  0.2s ;
+}
+.sendpic
+{
+    width: 40px;
+}
+.typetext
+{
+    
+    margin-left: 20px;
+    max-height: 50px;
+    width: 70%;
+    border-radius:10px;
+    border-color: #d9d9d9;
+    font-family: Inter;
+    padding: 15px;
+}
+textarea {
+    border: none;
+    overflow: auto;
+    outline: none;
+    font-size: 14px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    resize: none; /*remove the resize handle on the bottom right*/
+}
+.sendmess
+{
+    width: 100%;
+    min-height: 65px;
+    border-radius:30px;
+    background-color:#FFFFFF;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    flex-direction: row;
+    padding-right: 20px;
+}
+#messages
+{
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    overflow:auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    background-color:#d3e3ff;
+}
+input[type="file"] {
+    display: none;
+}
+.modal-content
+{
+    background-color: #fefefe;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    width: 400px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.datee
+{
+    text-align: right;
+    font-size: 12px;
+    margin-right: 5px;
+    margin-bottom: auto;
+    color:white;
+}
+.messPhoto
+{
+    width:250px;
+    height:auto ;
+}
+.mess
+{
+    word-break:keep-all;
+    white-space: pre-line;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 7px;
+    box-shadow:1px 5px 10px 1px rgba(0, 0, 0, 0.11);
+
+}
+
+.left
+{
+    background-color: #f7f7f7;
+    align-self: flex-start;
+}
+.right
+{
+    background-color: #4b87ff;
+    color:white;
+    align-self: flex-end;
+    margin-left: auto;
 }
 ::-webkit-scrollbar {
     width: 0;
@@ -115,6 +263,12 @@ ul
     display: flex;
     justify-content: center;
 }
+.sendback
+{
+    width: 20px;
+    height: 20px;
+    border:none;
+}
 .avatarka
 {
     
@@ -122,25 +276,26 @@ ul
     width: 115px;
     height: auto;
 }
+
 .profile
 {
-    background-color:white;
-    width: 30%;
-    min-width: 300px;
-    min-height: 528px;
-    border-radius: 0px 30px 30px 0px;
-    padding: 30px;
+    background-color:#679dff;
+    width: 60px;
+    height: 470px;
+    border-radius:30px;
+    padding: 10px;
     display: flex;
     justify-content:space-between;
     flex-direction: column;
-    align-items:center;
+    align-items:flex-start;
     font-size: 20px;
-    border-bottom: 1px solid #d9d9d9;
-    border-right: 1px solid #d9d9d9;
-    border-top: 1px solid #d9d9d9;
+    transition: 0.2s;
 }
+
 .info
 {
+    transition: 0.02s;
+    opacity: 0;
     margin: 20px;
     min-width: 30%;
     height: 90px;
@@ -152,7 +307,7 @@ ul
     align-items:center;
     text-align: center;
     justify-content: space-around;
-    color: #323366;
+    color: #ffffff;
 }
 
 .E-mail
@@ -162,34 +317,30 @@ ul
 {
     
     display: flex;
-    width: 287px;
     justify-content:space-around;
-    flex-direction: row;
+    flex-direction: column;
+    margin-left: 4px;
+    height: 150px;
     
-
 }
 
 div >button
 {
+    background:none;
     height: 41px;
-    background-color:#badaf7;
-    text-transform: uppercase;
     border-radius:10px;
     border:none;
-    color: #323366;
     font-weight: 500;
     font-size: 12px;
     transition:  0.2s ;
+    display: flex;
+    cursor: pointer;
 }
 button:hover
 {
-    background-color:#a4c1d3;
     transition:  0.2s ;
 }
-.LogOut
-{
-    width: 111px;
-}
+
 .appl1
 {
     min-height: 89px;
@@ -254,19 +405,6 @@ button:hover
     text-align: left;
 }
 
-#messages
-{
-    display: flex;
-    flex-direction: column;
-    height: 393px;
-    overflow:auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    font-size: 14px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 20px;
-}
 ::-webkit-scrollbar {
     width: 0;
     height: 0;
@@ -274,29 +412,29 @@ button:hover
 }
 #submitRating
 {
+    cursor: pointer;
+    font-family: Nunito;
     border:none;
-    background-color:#2C3E82;
+    background-color:#4589ff;
     font-weight: 400;
     color:#FFFFFF;
     border-radius:10px;
     height: 30px;
     width: 90px;
+    margin-left: 20px;
 }
 
 #ratingStars input[type="radio"] {
     display: none;
 }
 
-.starIcon {
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    background-size: cover;
-    display: inline-block;
+.starIcon
+{
+    fill:#4589ff;
 }
 
 input:checked + label svg path{
-   fill: #ff006a;
+    fill: #ff006a;
 }
 .reqPath
 {
@@ -310,4 +448,123 @@ input:checked + label svg path{
     align-items:center;
     justify-content:center;
     width:auto;
+    margin-top: 10px;
+}
+.sidebarImg
+{
+    height: 30px;
+    width: auto;
+    cursor: pointer;
+}
+.containProfStack
+{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.divStack
+{
+    width: 30px;
+    margin-left: 15px;
+
+}
+.labelBttns
+{
+    margin-left: 10px;
+    margin-top: 5px;
+    font-family: Nunito;
+    opacity: 0;
+    font-size: 15px;
+    color:white;
+}
+#add-form
+{
+    font-family: Nunito;
+    display: flex;
+    justify-content: space-around;
+    margin: 0px 0px 20px 20px;
+    flex-direction: column;
+    height:400px;
+}
+#theme, #equip, #content,#name, #lastname, #email, #password,#password2
+{
+    font-family: Nunito;
+    box-shadow:1px 5px 10px 1px #4589ff4a;
+    border:1px solid #4589ff8a;
+    border-radius:10px;
+    padding: 0px 10px;
+    width: 170px;
+    height: 30px;
+}
+#theme, #equip, #content,#name, #lastname, #email, #password,#password2:focus
+{
+    outline: 0px;
+}
+#content
+{
+    padding-top: 7px;
+    height: 200px;
+    width: 350px;
+}
+#send, #set
+{
+    font-family: Nunito;
+    color:#FFFFFF;
+    background-color:#4589ff;
+    box-shadow:1px 3px 10px 1px #4589ff4a;
+    border-radius:20px;
+    width: 85px;
+    height: 31px;
+    padding: 7px 10px;
+    margin-left: 130px;
+}
+
+#i1,#i2,#i3,#i4
+{
+    z-index: 2;
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    background-color:#c6ffcb9c;
+    font-size: large;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius:20px;
+    text-align: center;
+    padding-top: 25px;
+    font-family: Inter;
+    color: rgb(26, 107, 30);
+    display: none;
+}
+
+#i2,#i3,#i4
+{
+    background-color:#ffc6c69c;
+    color: rgb(107, 26, 26);
+}
+#set
+{
+    margin-left:85px;
+}
+#set-form
+{
+    font-family: Nunito;
+    display: flex;
+    justify-content: space-around;
+    margin: 0px 0px 20px 20px;
+    flex-direction: column;
+    height: 400px;
+
+}
+.wid
+{
+    width: 300px;
+}
+
+div > #name,#lastname, #email, #password,#password2
+{
+    margin-left:40px;
 }

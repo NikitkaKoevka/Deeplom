@@ -100,13 +100,13 @@
         var form = document.getElementById("Entry");
         form.action = "submit_request_login.php";
         form.submit();
-  }
-  function logOutForm() 
+}
+function logOutForm() 
 {
         var form = document.getElementById("Entry");
         form.action = "../Вход/LogOut.php";
         form.submit();
-  }
+}
   var i = document.cookie.match('(^|;)\\s*i\\s*=\\s*([^;]+)').pop();
   if(i == 1) {
     document.getElementById("i1").style.display = "block";

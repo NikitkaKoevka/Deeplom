@@ -227,7 +227,7 @@ button:hover
     justify-content: space-around;
     flex-direction: row;
 }
-#i1
+#i1,#i2,#i3,#i4
 {
     position: absolute;
     width: 300px;
@@ -243,51 +243,9 @@ button:hover
     color: rgb(26, 107, 30);
     display: none;
 }
-#i2
+
+#i2,#i3,#i4
 {
-    position: absolute;
-    width: 300px;
-    height: 100px;
     background-color:#ffc6c69c;
-    font-size: large;
-    font-weight: 600;
-    text-transform: uppercase;
-    border-radius:20px;
-    text-align: center;
-    padding-top: 25px;
-    font-family: Inter;
     color: rgb(107, 26, 26);
-    display: none;
-}
-#i3
-{
-    position: absolute;
-    width: 300px;
-    height: 100px;
-    background-color:#ffc6c69c;
-    font-size: large;
-    font-weight: 600;
-    text-transform: uppercase;
-    border-radius:20px;
-    text-align: center;
-    padding-top: 25px;
-    font-family: Inter;
-    color: rgb(107, 26, 26);
-    display: none;
-}
-#i4
-{
-    position: absolute;
-    width: 300px;
-    height: 100px;
-    background-color:#ffc6c69c;
-    font-size: large;
-    font-weight: 600;
-    text-transform: uppercase;
-    border-radius:20px;
-    text-align: center;
-    padding-top: 25px;
-    font-family: Inter;
-    color: rgb(107, 26, 26);
-    display: none;
 }

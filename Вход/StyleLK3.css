@@ -5,7 +5,7 @@ html
 }
 body
 {
-    background: linear-gradient(180deg, rgb(43, 102, 185) 0%, rgb(96, 145, 230) 32%, rgb(117, 218, 243) 100%);
+    background: linear-gradient(180deg, #6091e6 0%, #6091e6 32%, #75daf3 100%);
     display: flex;
     min-height: 100%;
     justify-content: center;

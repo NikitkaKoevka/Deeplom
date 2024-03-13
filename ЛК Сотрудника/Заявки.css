@@ -145,7 +145,7 @@ ul
 }
 .mess
 {
-    word-break: break-all;
+    word-break: keep-all;
     white-space: pre-line;
     max-width: 270px;
     background-color: #9fd2ff;

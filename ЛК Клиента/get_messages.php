@@ -8,7 +8,7 @@ $dbname = "istok";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-$conversation_id= $_COOKIE['conversation_id'];
+$conversation_id= $_POST['conversation_id'];
 
 
 $sql = "SELECT * FROM messages WHERE conversation_id = '$conversation_id' ORDER BY timestamp";
